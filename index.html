@@ -1,0 +1,1627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intec Vision Solutions - IT Services & Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+   
+   <script>
+    
+        tailwind.config={
+            theme:{
+                extend:{
+                    colors:{
+                        primary:'#2563EB',
+                        secondary:'#0B1736',
+                        light: '#F3F4F6',
+                        dark: '#1E293B'
+                    },
+                    borderRadius:{
+                        'none':'0px',
+                        'sm':'4px',
+                        DEFAULT:'8px',
+                        'md':'12px',
+                        'lg':'16px',
+                        'xl':'20px',
+                        '2xl':'24px',
+                        '3xl':'32px',
+                        'full':'9999px',
+                        'button':'8px'
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'inter': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, #0B1736 0%, #1E40AF 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-bg::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+        
+        .service-card {
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #2563EB;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .sticky-header {
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .btn-primary {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.1), 0 2px 4px -1px rgba(37, 99, 235, 0.06);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.2), 0 4px 6px -2px rgba(37, 99, 235, 0.1);
+        }
+        
+        .btn-outline {
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(255, 255, 255, 0.1), 0 4px 6px -2px rgba(255, 255, 255, 0.05);
+        }
+        
+        input:focus, textarea:focus {
+            border-color: #2563EB;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        
+        .counter-item {
+            transition: all 0.3s ease;
+        }
+        
+        .counter-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-3px);
+            color: #2563EB;
+        }
+        
+        .custom-checkbox {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #CBD5E1;
+            border-radius: 4px;
+            outline: none;
+            transition: all 0.2s ease;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .custom-checkbox:checked {
+            background-color: #2563EB;
+            border-color: #2563EB;
+        }
+        
+        .custom-checkbox:checked::after {
+            content: '✓';
+            position: absolute;
+            color: white;
+            font-size: 14px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .custom-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        
+        .custom-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #CBD5E1;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        
+        input:checked + .slider {
+            background-color: #2563EB;
+        }
+        
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fadeIn {
+            animation: fadeIn 0.5s ease forwards;
+        }
+        
+        @keyframes typewriter {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        
+        .typewriter {
+            overflow: hidden;
+            white-space: nowrap;
+            animation: typewriter 3s steps(40) 1s forwards;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+        button {
+  position: relative;
+  padding: 10px 20px;
+  border-radius: 7px;
+  border: 1px solid rgb(61, 106, 255);
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  background: transparent;
+  color: #fff;
+  overflow: hidden;
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+button:hover {
+  background: rgb(61, 106, 255);
+  box-shadow: 0 0 30px 5px rgba(0, 142, 236, 0.815);
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+button:hover::before {
+  -webkit-animation: sh02 0.5s 0s linear;
+  -moz-animation: sh02 0.5s 0s linear;
+  animation: sh02 0.5s 0s linear;
+}
+
+button::before {
+  content: '';
+  display: block;
+  width: 0px;
+  height: 86%;
+  position: absolute;
+  top: 7%;
+  left: 0%;
+  opacity: 0;
+  background: #fff;
+  box-shadow: 0 0 50px 30px #fff;
+  -webkit-transform: skewX(-20deg);
+  -moz-transform: skewX(-20deg);
+  -ms-transform: skewX(-20deg);
+  -o-transform: skewX(-20deg);
+  transform: skewX(-20deg);
+}
+
+@keyframes sh02 {
+  from {
+    opacity: 0;
+    left: 0%;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    left: 100%;
+  }
+}
+
+button:active {
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: box-shadow 0.2s ease-in;
+  -moz-transition: box-shadow 0.2s ease-in;
+  transition: box-shadow 0.2s ease-in;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.up {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+}
+
+.down {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+}
+
+.card1 {
+  width: 50px;
+  height: 50px;
+  outline: none;
+  border: none;
+  background: white;
+  border-radius: 90px 5px 5px 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: .2s ease-in-out;
+  text-align: center;
+}
+
+.instagram {
+  margin-top: 0.8rem;
+  margin-left: 0.8rem;
+
+  fill: #cc39a4;
+}
+
+.card2 {
+  width: 50px;
+  height: 50px;
+  outline: none;
+  border: none;
+  background: white;
+  border-radius: 5px 90px 5px 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: .2s ease-in-out;
+  text-align: center;
+}
+
+.twitter {
+  margin-top: 0.8rem;
+  margin-left: 0.4rem;
+
+  fill: #03A9F4;
+}
+
+.card3 {
+  width: 50px;
+  height: 50px;
+  outline: none;
+  border: none;
+  background: white;
+  border-radius: 5px 5px 5px 90px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: .2s ease-in-out;
+  text-align: center;
+}
+
+.github {
+  margin-top: 0.004rem;
+  margin-left: 0.9rem;
+
+
+}
+
+.card4 {
+  width: 50px;
+  height: 50px;
+  outline: none;
+  border: none;
+  background: white;
+  border-radius: 5px 5px 90px 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: .2s ease-in-out;
+  text-align: center;
+}
+
+.discord {
+  margin-top: -0.2rem;
+  margin-left: 0.4rem;
+
+  fill: #8c9eff;
+}
+
+.card1:hover {
+  cursor: pointer;
+  scale: 1.1;
+  background-color: #cc39a4;
+}
+
+.card1:hover .instagram {
+  fill: white;
+}
+
+.card2:hover {
+  cursor: pointer;
+  scale: 1.1;
+  background-color: #03A9F4;
+}
+
+.card2:hover .twitter {
+  fill: white;
+}
+
+.card3:hover {
+  cursor: pointer;
+  scale: 1.1;
+  background-color: black;
+}
+
+.card3:hover .github {
+  fill: white;
+}
+
+.card4:hover {
+  cursor: pointer;
+  scale: 1.1;
+  background-color: #8c9eff;
+}
+
+.card4:hover .discord {
+  fill: white;
+}
+
+
+  <style>
+
+  #about {
+    position: relative;
+    overflow: hidden;
+  }
+
+  #particle-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  #about .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  #rocket {
+    position: absolute;
+    top: 40%; /* start below the screen */
+    left: -60px;   /* start to the left */
+    font-size: 2.5rem;
+    z-index: 50;
+    opacity: 0;
+    transition: transform 4s ease-in-out, opacity 0.5s ease-in;
+  }
+
+  #rocket.fly {
+    opacity: 1;
+    transform: translate(120vw, -120vh); /* go diagonally off-screen */
+  }
+
+
+
+
+  
+</style>
+
+</head>
+<body class="bg-white text-gray-800">
+    <!-- Header -->
+    <header class="fixed w-full z-50 transition-all duration-300 sticky-header">
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <a href="#" class="text-2xl font-['Pacifico'] text-secondary">Intec Vision</a>
+            
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="nav-link font-medium text-gray-800 hover:text-primary transition-colors">Home</a>
+                <a href="#about" class="nav-link font-medium text-gray-800 hover:text-primary transition-colors">About</a>
+                <a href="#services" class="nav-link font-medium text-gray-800 hover:text-primary transition-colors">Services</a>
+                <a href="#portfolio" class="nav-link font-medium text-gray-800 hover:text-primary transition-colors">Portfolio</a>
+                <a href="#contact" class="nav-link font-medium text-gray-800 hover:text-primary transition-colors">Contact</a>
+            </nav>
+            
+            <div class="flex items-center space-x-4">
+                <a href="#contact" class="hidden md:inline-block bg-primary text-white px-6 py-2.5 rounded-button font-medium hover:bg-blue-700 transition-colors whitespace-nowrap !rounded-button">Get in Touch</a>
+                <button class="md:hidden w-10 h-10 flex items-center justify-center text-gray-800" id="mobile-menu-button">
+                    <i class="ri-menu-line ri-lg"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden bg-white shadow-lg absolute w-full">
+            <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
+                <a href="#home" class="font-medium text-gray-800 hover:text-primary transition-colors py-2 border-b border-gray-100">Home</a>
+                <a href="#about" class="font-medium text-gray-800 hover:text-primary transition-colors py-2 border-b border-gray-100">About</a>
+                <a href="#services" class="font-medium text-gray-800 hover:text-primary transition-colors py-2 border-b border-gray-100">Services</a>
+                <a href="#portfolio" class="font-medium text-gray-800 hover:text-primary transition-colors py-2 border-b border-gray-100">Portfolio</a>
+                <a href="#contact" class="font-medium text-gray-800 hover:text-primary transition-colors py-2">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg min-h-screen flex items-center justify-center text-white pt-20">
+        <div class="container mx-auto px-4 py-20 md:py-32 flex flex-col md:flex-row items-center">
+            <div class="w-full  mb-12 md:mb-0 animate-fadeIn" style="animation-delay: 0.3s;">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight typewriter">
+                   Welcome To Intec Vision Solutions 
+                </h1>
+                <p class="text-lg md:text-xl mb-8 text-gray-200 max-w-xl">
+                    We help ambitious businesses like yours generate more profits by building awareness, driving web traffic, connecting with customers growing.
+                </p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                  <button  class="px-4 py-2">
+    Our Service
+</button>
+                   <button class="px-4 py-2">
+    Get started
+</button>
+                </div>
+            </div>
+            <!-- <div class="w-full md:w-1/2 flex justify-center float-animation">
+                <img src="https://readdy.ai/api/search-image?query=modern%20futuristic%20IT%20technology%20concept%20with%20abstract%20digital%20elements%2C%20glowing%20blue%20circuits%2C%20and%20tech%20particles%2C%20professional%20corporate%20tech%20visualization%2C%20high-quality%203D%20rendering&width=600&height=500&seq=1&orientation=landscape" alt="IT Solutions" class="max-w-full h-auto rounded-lg shadow-2xl">
+            </div> -->
+        </div>
+    </section>
+
+  <!-- about sectio -->
+
+
+
+<section id="about" class="py-20 bg-gray-50">
+  <canvas id="particle-canvas"></canvas>
+
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-secondary mb-4">About Intec Vision Solutions</h2>
+      <p class="text-gray-600 max-w-3xl mx-auto">We are a team of passionate IT professionals dedicated to delivering innovative solutions that drive business growth and digital transformation.</p>
+    </div>
+
+    <div class="flex flex-col md:flex-row items-center">
+      <div class="w-full md:w-1/2 mb-12 md:mb-0 pr-0 md:pr-12 text-center mx-auto max-w-lg">
+        <h3 class="text-2xl font-semibold text-secondary mb-6">What We Stand For</h3>
+        <p class="text-gray-700 mb-6">
+          At the core of our company is a commitment to innovation and integrity. We believe technology should empower, not complicate.
+          Our mission is to deliver smart, scalable IT solutions that drive business growth.
+        </p>
+        <p class="text-gray-700 mb-6">
+          Security isn’t just a feature—it’s a fundamental promise to our clients. Customer success is our success; we don’t just support—we partner.
+        </p>
+        <p class="text-gray-700 mb-6">
+          We respect deadlines, budgets, and the trust our clients place in us.
+        </p>
+        <button class="px-5 py-1.5 bg-primary text-white rounded-lg shadow hover:bg-primary-dark transition mx-auto block">
+          Know More
+        </button>
+      </div>
+
+      <div class="w-full md:w-1/2 flex justify-center">
+        <div class="relative max-w-xl w-full">
+          <img src="https://readdy.ai/api/search-image?query=professional%20IT%20team%20working%20in%20modern%20office%20environment%2C%20diverse%20group%20of%20tech%20specialists%20collaborating%20on%20digital%20projects%2C%20clean%20corporate%20setting%20with%20computers%20and%20technology%2C%20professional%20business%20atmosphere&width=600&height=500&seq=2&orientation=landscape" 
+            alt="About Intec Vision Solutions"
+            class="w-full h-[400px] rounded-lg shadow-xl object-cover">
+          <div class="absolute -bottom-12 left-1/2 transform -translate-x-1/2 bg-primary text-white p-4 rounded-lg shadow-lg w-[90%] text-center">
+            <h4 class="text-xl font-semibold mb-2">Our Mission</h4>
+            <p class="text-sm">1 in Web Development & Digital Marketing.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const canvas = document.getElementById('particle-canvas');
+  const ctx = canvas.getContext('2d');
+  let width, height;
+  const particles = [];
+  const particleCount = 80;
+  const connectionDistance = 120;
+  const mouse = { x: null, y: null, velX: 0, velY: 0 };
+
+  function resize() {
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = document.getElementById('about').offsetHeight;
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  class Particle {
+    constructor() {
+      this.reset();
+    }
+
+    reset() {
+      this.x = Math.random() * width;
+      this.y = Math.random() * height;
+      this.size = Math.random() * 2 + 1;
+      this.speedX = (Math.random() - 0.5) * 1;
+      this.speedY = (Math.random() - 0.5) * 1;
+      this.color = '#00bcd4';
+    }
+
+    update() {
+      this.x += this.speedX + mouse.velX * 0.05;
+      this.y += this.speedY + mouse.velY * 0.05;
+
+      // Wrap around
+      if (this.x > width) this.x = 0;
+      if (this.x < 0) this.x = width;
+      if (this.y > height) this.y = 0;
+      if (this.y < 0) this.y = height;
+    }
+
+    draw() {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.fillStyle = this.color;
+      ctx.fill();
+    }
+  }
+
+  function drawConnections() {
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        if (distance < connectionDistance) {
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.strokeStyle = 'rgba(0, 188, 212, 0.1)';
+          ctx.lineWidth = 1;
+          ctx.stroke();
+        }
+      }
+    }
+  }
+
+  for (let i = 0; i < particleCount; i++) {
+    particles.push(new Particle());
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, width, height);
+    particles.forEach(p => {
+      p.update();
+      p.draw();
+    });
+    drawConnections();
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+
+  window.addEventListener('mousemove', e => {
+    if (mouse.x !== null && mouse.y !== null) {
+      mouse.velX = e.clientX - mouse.x;
+      mouse.velY = e.clientY - mouse.y;
+    }
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+  });
+
+  let lastScrollY = window.scrollY;
+  window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+    mouse.velY = currentScrollY - lastScrollY;
+    lastScrollY = currentScrollY;
+  });
+</script>
+
+
+
+ 
+    <!-- Services Section -->
+    <section id="services" class="py-20 relative bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500 overflow-hidden">
+  <!-- 🚀 Rocket Element -->
+<!-- 🚀 Rocket Element -->
+   <!-- 🚀 Rocket -->
+  <!-- <div id="rocket-container">
+    <div id="rocket">🚀</div>
+    <div class="trail"></div>
+  </div> -->
+
+  <div class="container mx-auto px-4 fade-in">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl  font-bold text-white mb-4">Our Services</h2>
+      <p class="text-white max-w-3xl mx-auto">We offer a comprehensive range of IT services and solutions tailored to meet your business needs and help you achieve your goals.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+                    <div class="w-16 h-16 flex items-center justify-center bg-blue-50 text-primary rounded-full mb-6">
+                        <i class="ri-code-s-slash-line ri-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-secondary mb-4">Web Development</h3>
+                    <p class="text-gray-600 mb-6">
+                        We create responsive, user-friendly websites and web applications that deliver exceptional user experiences and drive business growth.
+                    </p>
+                    <ul class="text-gray-600 space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                            <span>Custom Website Development</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                            <span>E-commerce Solutions</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                            <span>Web Application Development</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                            <span>CMS Development</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="inline-block text-primary font-medium hover:underline">Learn More <i class="ri-arrow-right-line ml-1"></i></a>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+                    <div class="w-16 h-16 flex items-center justify-center bg-blue-50 text-primary rounded-full mb-6">
+                        <i class="ri-smartphone-line ri-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-secondary mb-4">Mobile App Development</h3>
+                    <p class="text-gray-600 mb-6">
+                        We develop high-performance, feature-rich mobile applications for iOS and Android platforms that engage users and drive business results.
+                    </p>
+                    <ul class="text-gray-600 space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                            <span>Native iOS Development</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                            <span>Native Android Development</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                            <span>Cross-Platform Development</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                            <span>App Maintenance & Support</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="inline-block text-primary font-medium hover:underline">Learn More <i class="ri-arrow-right-line ml-1"></i></a>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+                    <div class="w-16 h-16 flex items-center justify-center bg-blue-50 text-primary rounded-full mb-6">
+                        <i class="ri-cloud-line ri-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-secondary mb-4">Cloud Solutions</h3>
+                    <p class="text-gray-600 mb-6">
+                        We provide comprehensive cloud solutions that help businesses leverage the power of cloud computing for improved efficiency and scalability.
+                    </p>
+                    <ul class="text-gray-600 space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                            <span>Cloud Migration</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                            <span>Cloud Infrastructure Management</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                            <span>Cloud Security Solutions</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                            <span>Backup & Disaster Recovery</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="inline-block text-primary font-medium hover:underline">Learn More <i class="ri-arrow-right-line ml-1"></i></a>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+                    <div class="w-16 h-16 flex items-center justify-center bg-blue-50 text-primary rounded-full mb-6">
+                        <i class="ri-database-2-line ri-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-secondary mb-4">Data Analytics</h3>
+                    <p class="text-gray-600 mb-6">
+                        We help businesses harness the power of data to gain valuable insights, make informed decisions, and drive business growth.
+                    </p>
+                    <ul class="text-gray-600 space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                            <span>Data Warehousing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                            <span>Business Intelligence</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                            <span>Data Visualization</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                            <span>Predictive Analytics</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="inline-block text-primary font-medium hover:underline">Learn More <i class="ri-arrow-right-line ml-1"></i></a>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+                    <div class="w-16 h-16 flex items-center justify-center bg-blue-50 text-primary rounded-full mb-6">
+                        <i class="ri-shield-check-line ri-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-secondary mb-4">Cybersecurity</h3>
+                    <p class="text-gray-600 mb-6">
+                        We provide comprehensive cybersecurity solutions to protect your business from cyber threats and ensure data security and compliance.
+                    </p>
+                    <ul class="text-gray-600 space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                            <span>Security Assessment</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                            <span>Network Security</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                            <span>Data Protection</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                            <span>Security Monitoring</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="inline-block text-primary font-medium hover:underline">Learn More <i class="ri-arrow-right-line ml-1"></i></a>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="service-card bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+                    <div class="w-16 h-16 flex items-center justify-center bg-blue-50 text-primary rounded-full mb-6">
+                        <i class="ri-customer-service-2-line ri-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-secondary mb-4">IT Consulting</h3>
+                    <p class="text-gray-600 mb-6">
+                        We provide strategic IT consulting services to help businesses align their technology investments with their business goals and objectives.
+                    </p>
+                    <ul class="text-gray-600 space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                            <span>IT Strategy Development</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                            <span>Technology Assessment</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                            <span>Digital Transformation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                            <span>IT Roadmap Planning</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="inline-block text-primary font-medium hover:underline">Learn More <i class="ri-arrow-right-line ml-1"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    
+ 
+
+
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-secondary mb-4">Our Portfolio</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">Take a look at some of our recent projects and see how we've helped businesses achieve their goals through innovative IT solutions.</p>
+            </div>
+            
+            <div class="flex justify-center mb-10">
+                <div class="inline-flex bg-white p-1 rounded-full shadow-sm">
+                    <button class="portfolio-filter active px-6 py-2 rounded-full text-white bg-primary font-medium whitespace-nowrap !rounded-full" data-filter="all">All Projects</button>
+                    <button class="portfolio-filter px-6 py-2 rounded-full text-gray-700 font-medium hover:bg-gray-100 transition-colors whitespace-nowrap !rounded-full" data-filter="web">Web Development</button>
+                    <button class="portfolio-filter px-6 py-2 rounded-full text-gray-700 font-medium hover:bg-gray-100 transition-colors whitespace-nowrap !rounded-full" data-filter="mobile">Mobile Apps</button>
+                    <button class="portfolio-filter px-6 py-2 rounded-full text-gray-700 font-medium hover:bg-gray-100 transition-colors whitespace-nowrap !rounded-full" data-filter="cloud">Cloud Solutions</button>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Portfolio Item 1 -->
+                <div class="portfolio-item" data-category="web">
+                    <div class="bg-white rounded-lg overflow-hidden shadow-sm group">
+                        <div class="relative overflow-hidden">
+                            <img src="https://readdy.ai/api/search-image?query=modern%20professional%20e-commerce%20website%20interface%20on%20laptop%20screen%2C%20clean%20design%20with%20product%20showcase%2C%20elegant%20user%20interface%20for%20online%20shopping%2C%20high-quality%20digital%20storefront%20visualization&width=600&height=400&seq=3&orientation=landscape" alt="E-commerce Website" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-primary bg-opacity-80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <a href="#" class="text-white text-xl font-semibold">View Project</a>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-secondary mb-2">E-commerce Platform</h3>
+                            <p class="text-gray-600 mb-4">A comprehensive e-commerce solution for a retail business with integrated payment gateway and inventory management.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-50 text-primary px-3 py-1 rounded-full text-sm">React.js</span>
+                                <span class="bg-blue-50 text-primary px-3 py-1 rounded-full text-sm">Node.js</span>
+                                <span class="bg-blue-50 text-primary px-3 py-1 rounded-full text-sm">MongoDB</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 2 -->
+                <div class="portfolio-item" data-category="mobile">
+                    <div class="bg-white rounded-lg overflow-hidden shadow-sm group">
+                        <div class="relative overflow-hidden">
+                            <img src="https://readdy.ai/api/search-image?query=mobile%20app%20interface%20on%20smartphone%2C%20fitness%20tracking%20application%20with%20clean%20modern%20UI%2C%20activity%20dashboard%20with%20statistics%20and%20progress%20charts%2C%20professional%20mobile%20design&width=600&height=400&seq=4&orientation=portrait" alt="Fitness App" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-primary bg-opacity-80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <a href="#" class="text-white text-xl font-semibold">View Project</a>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-secondary mb-2">Fitness Tracking App</h3>
+                            <p class="text-gray-600 mb-4">A mobile application for fitness enthusiasts to track their workouts, nutrition, and progress towards their goals.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-50 text-primary px-3 py-1 rounded-full text-sm">Flutter</span>
+                                <span class="bg-blue-50 text-primary px-3 py-1 rounded-full text-sm">Firebase</span>
+                                <span class="bg-blue-50 text-primary px-3 py-1 rounded-full text-sm">REST API</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 3 -->
+                <div class="portfolio-item" data-category="cloud">
+                    <div class="bg-white rounded-lg overflow-hidden shadow-sm group">
+                        <div class="relative overflow-hidden">
+                            <img src="https://readdy.ai/api/search-image?query=cloud%20infrastructure%20visualization%2C%20modern%20data%20center%20with%20server%20racks%20and%20network%20connections%2C%20digital%20cloud%20computing%20concept%20with%20blue%20glowing%20elements%2C%20professional%20IT%20infrastructure&width=600&height=400&seq=5&orientation=landscape" alt="Cloud Migration" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-primary bg-opacity-80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <a href="#" class="text-white text-xl font-semibold">View Project</a>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-secondary mb-2">Cloud Migration Project</h3>
+                            <p class="text-gray-600 mb-4">A successful migration of on-premises infrastructure to the cloud for a financial services company.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-50 text-primary px-3 py-1 rounded-full text-sm">AWS</span>
+                                <span class="bg-blue-50 text-primary px-3 py-1 rounded-full text-sm">Docker</span>
+                                <span class="bg-blue-50 text-primary px-3 py-1 rounded-full text-sm">Kubernetes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 4 -->
+                <div class="portfolio-item" data-category="web">
+                    <div class="bg-white rounded-lg overflow-hidden shadow-sm group">
+                        <div class="relative overflow-hidden">
+                            <img src="https://readdy.ai/api/search-image?query=corporate%20website%20design%20on%20desktop%20and%20mobile%20devices%2C%20responsive%20business%20website%20with%20professional%20layout%2C%20company%20information%20and%20services%20showcase%2C%20clean%20modern%20web%20design&width=600&height=400&seq=6&orientation=landscape" alt="Corporate Website" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-primary bg-opacity-80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <a href="#" class="text-white text-xl font-semibold">View Project</a>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-secondary mb-2">Corporate Website Redesign</h3>
+                            <p class="text-gray-600 mb-4">A complete redesign of a corporate website for a manufacturing company with improved user experience and SEO.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-50 text-primary px-3 py-1 rounded-full text-sm">WordPress</span>
+                                <span class="bg-blue-50 text-primary px-3 py-1 rounded-full text-sm">JavaScript</span>
+                                <span class="bg-blue-50 text-primary px-3 py-1 rounded-full text-sm">CSS3</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 5 -->
+                <div class="portfolio-item" data-category="mobile">
+                    <div class="bg-white rounded-lg overflow-hidden shadow-sm group">
+                        <div class="relative overflow-hidden">
+                            <img src="https://readdy.ai/api/search-image?query=food%20delivery%20app%20interface%20on%20smartphone%2C%20restaurant%20menu%20browsing%20and%20order%20tracking%20screens%2C%20modern%20mobile%20application%20for%20food%20ordering%2C%20professional%20UI%2FUX%20design&width=600&height=400&seq=7&orientation=portrait" alt="Food Delivery App" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-primary bg-opacity-80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <a href="#" class="text-white text-xl font-semibold">View Project</a>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-secondary mb-2">Food Delivery App</h3>
+                            <p class="text-gray-600 mb-4">A mobile application for a restaurant chain to enable online food ordering and delivery tracking.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-50 text-primary px-3 py-1 rounded-full text-sm">React Native</span>
+                                <span class="bg-blue-50 text-primary px-3 py-1 rounded-full text-sm">Express.js</span>
+                                <span class="bg-blue-50 text-primary px-3 py-1 rounded-full text-sm">MongoDB</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 6 -->
+                <div class="portfolio-item" data-category="cloud">
+                    <div class="bg-white rounded-lg overflow-hidden shadow-sm group">
+                        <div class="relative overflow-hidden">
+                            <img src="https://readdy.ai/api/search-image?query=data%20analytics%20dashboard%20with%20charts%20and%20graphs%2C%20business%20intelligence%20visualization%2C%20modern%20data%20reporting%20interface%20with%20statistics%20and%20KPIs%2C%20professional%20analytics%20platform&width=600&height=400&seq=8&orientation=landscape" alt="Analytics Dashboard" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-primary bg-opacity-80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <a href="#" class="text-white text-xl font-semibold">View Project</a>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-secondary mb-2">Data Analytics Platform</h3>
+                            <p class="text-gray-600 mb-4">A cloud-based data analytics platform for a healthcare provider to analyze patient data and improve service delivery.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-50 text-primary px-3 py-1 rounded-full text-sm">Azure</span>
+                                <span class="bg-blue-50 text-primary px-3 py-1 rounded-full text-sm">Power BI</span>
+                                <span class="bg-blue-50 text-primary px-3 py-1 rounded-full text-sm">Python</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#contact" class="bg-primary text-white px-8 py-3 rounded-button font-medium hover:bg-blue-700 transition-all btn-primary inline-block whitespace-nowrap !rounded-button">
+                    Discuss Your Project
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-secondary mb-4">What Our Clients Say</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">Don't just take our word for it. Here's what our clients have to say about our services and solutions.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-gray-50 p-8 rounded-lg shadow-sm border border-gray-100">
+                    <div class="flex items-center mb-6">
+                        <div class="text-primary">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic">
+                        "Intec Vision Solutions transformed our business with their innovative IT solutions. Their team was professional, responsive, and delivered beyond our expectations. We've seen a significant improvement in our operational efficiency and customer satisfaction."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gray-300 rounded-full overflow-hidden mr-4">
+                            <img src="https://readdy.ai/api/search-image?query=professional%20business%20man%20portrait%2C%20corporate%20headshot%2C%20neutral%20background%2C%20professional%20attire%2C%20confident%20expression&width=100&height=100&seq=9&orientation=squarish" alt="Client" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="text-secondary font-semibold">Michael Richardson</h4>
+                            <p class="text-gray-600 text-sm">CEO, Global Retail Solutions</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-gray-50 p-8 rounded-lg shadow-sm border border-gray-100">
+                    <div class="flex items-center mb-6">
+                        <div class="text-primary">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic">
+                        "Working with Intec Vision Solutions on our mobile app development project was a fantastic experience. Their team understood our requirements perfectly and delivered a high-quality app that our customers love. Their ongoing support has been exceptional."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gray-300 rounded-full overflow-hidden mr-4">
+                            <img src="https://readdy.ai/api/search-image?query=professional%20business%20woman%20portrait%2C%20corporate%20headshot%2C%20neutral%20background%2C%20professional%20attire%2C%20confident%20expression&width=100&height=100&seq=10&orientation=squarish" alt="Client" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="text-secondary font-semibold">Samantha Johnson</h4>
+                            <p class="text-gray-600 text-sm">Marketing Director, HealthTech Inc.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-gray-50 p-8 rounded-lg shadow-sm border border-gray-100">
+                    <div class="flex items-center mb-6">
+                        <div class="text-primary">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic">
+                        "Intec Vision Solutions helped us migrate our infrastructure to the cloud seamlessly. Their expertise in cloud solutions saved us time and money, and their team was always available to address our concerns. We highly recommend their services."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gray-300 rounded-full overflow-hidden mr-4">
+                            <img src="https://readdy.ai/api/search-image?query=professional%20business%20man%20portrait%2C%20corporate%20headshot%2C%20neutral%20background%2C%20professional%20attire%2C%20confident%20expression%2C%20different%20from%20the%20first%20man&width=100&height=100&seq=11&orientation=squarish" alt="Client" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="text-secondary font-semibold">David Thompson</h4>
+                            <p class="text-gray-600 text-sm">CTO, Financial Services Group</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<section class="py-20 bg-primary text-white">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="text-center">
+                <div class="text-5xl font-bold mb-4 stat-number" data-target="100" id="stats-clients">0+</div>
+                <p class="text-xl">Happy Clients</p>
+            </div>
+            <div class="text-center">
+                <div class="text-5xl font-bold mb-4 stat-number" data-target="250" id="stats-projects">0+</div>
+                <p class="text-xl">Projects Completed</p>
+            </div>
+            <div class="text-center">
+                <div class="text-5xl font-bold mb-4 stat-number" data-target="10" id="stats-years">0+</div>
+                <p class="text-xl">Years of Experience</p>
+            </div>
+            <div class="text-center">
+                <div class="text-5xl font-bold mb-4 stat-number" data-target="15" id="stats-awards">0+</div>
+                <p class="text-xl">Industry Awards</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+  // Select all stat numbers
+  const statElements = document.querySelectorAll('.stat-number');
+
+  function animateStat(element) {
+    const target = parseInt(element.getAttribute('data-target'));
+    const duration = 2000; // total animation duration per cycle in ms
+    const stepTime = duration / target;
+
+    let current = 0;
+
+    function update() {
+      current++;
+      element.textContent = current + "+";
+
+      if (current < target) {
+        setTimeout(update, stepTime);
+      } else {
+        // Pause for 1 second and restart counting
+        setTimeout(() => {
+          current = 0;
+          element.textContent = "0+";
+          update();
+        }, 1000);
+      }
+    }
+
+    update();
+  }
+
+  // Start animation for each stat element
+  statElements.forEach(el => {
+    animateStat(el);
+  });
+</script>
+
+
+<script>
+  const yearsElement = document.getElementById('stats-years');
+  const maxYears = 10;
+  const duration = 2000; // Total time to count up in milliseconds
+  const delay = 50;      // Delay between increments in ms
+
+  function animateYears() {
+    let current = 0;
+    const stepTime = duration / maxYears;
+
+    const interval = setInterval(() => {
+      current++;
+      yearsElement.textContent = current + "+";
+      if (current >= maxYears) {
+        clearInterval(interval);
+        // After short pause, restart animation
+        setTimeout(() => {
+          yearsElement.textContent = "0+";
+          animateYears();
+        }, 1000);
+      }
+    }, stepTime);
+  }
+
+  animateYears();
+</script>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-secondary mb-4">Get in Touch</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">Have a project in mind or want to learn more about our services? Contact us today and let's discuss how we can help you achieve your business goals.</p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="w-full lg:w-1/2">
+                    <form id="contact-form" class="bg-white p-8 rounded-lg shadow-sm">
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Your Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-primary transition-colors" placeholder="Enter your name">
+                        </div>
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-primary transition-colors" placeholder="Enter your email">
+                        </div>
+                        <div class="mb-6">
+                            <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-primary transition-colors" placeholder="Enter your phone number">
+                        </div>
+                        <div class="mb-6">
+                            <label for="service" class="block text-gray-700 font-medium mb-2">Service of Interest</label>
+                            <div class="relative">
+                                <select id="service" class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-primary transition-colors appearance-none pr-8">
+                                    <option value="" selected disabled>Select a service</option>
+                                    <option value="web-development">Web Development</option>
+                                    <option value="mobile-app-development">Mobile App Development</option>
+                                    <option value="cloud-solutions">Cloud Solutions</option>
+                                    <option value="data-analytics">Data Analytics</option>
+                                    <option value="cybersecurity">Cybersecurity</option>
+                                    <option value="it-consulting">IT Consulting</option>
+                                </select>
+                                <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+                                    <i class="ri-arrow-down-s-line text-gray-500"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Your Message</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-primary transition-colors" placeholder="Tell us about your project or inquiry"></textarea>
+                        </div>
+                        <div class="mb-6 flex items-center">
+                            <input type="checkbox" id="consent" class="custom-checkbox mr-3">
+                            <label for="consent" class="text-gray-700">I agree to the processing of my personal data in accordance with the privacy policy</label>
+                        </div>
+                        <button type="submit" class="w-full bg-primary text-white px-6 py-3 rounded-button font-medium hover:bg-blue-700 transition-all btn-primary whitespace-nowrap !rounded-button">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="w-full lg:w-1/2">
+                    <div class="bg-white p-8 rounded-lg shadow-sm mb-8">
+                        <h3 class="text-2xl font-semibold text-secondary mb-6">Contact Information</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 flex items-center justify-center bg-blue-50 text-primary rounded-full mr-4">
+                                    <i class="ri-map-pin-line ri-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-medium text-secondary mb-1">Our Location</h4>
+                                    <p class="text-gray-600">123 Business Avenue, Tech Park, Bangalore, India</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 flex items-center justify-center bg-blue-50 text-primary rounded-full mr-4">
+                                    <i class="ri-phone-line ri-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-medium text-secondary mb-1">Phone Number</h4>
+                                    <p class="text-gray-600">+91 98765 43210</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 flex items-center justify-center bg-blue-50 text-primary rounded-full mr-4">
+                                    <i class="ri-mail-line ri-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-medium text-secondary mb-1">Email Address</h4>
+                                    <p class="text-gray-600">info@intecvisionsolutions.in</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 flex items-center justify-center bg-blue-50 text-primary rounded-full mr-4">
+                                    <i class="ri-time-line ri-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-medium text-secondary mb-1">Working Hours</h4>
+                                    <p class="text-gray-600">Monday - Friday: 9:00 AM - 6:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="text-lg font-medium text-secondary mb-4">Follow Us</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-100 text-gray-600 rounded-full hover:bg-primary hover:text-white transition-colors social-icon">
+                                    <i class="ri-facebook-fill"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-100 text-gray-600 rounded-full hover:bg-primary hover:text-white transition-colors social-icon">
+                                    <i class="ri-twitter-fill"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-100 text-gray-600 rounded-full hover:bg-primary hover:text-white transition-colors social-icon">
+                                    <i class="ri-linkedin-fill"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-100 text-gray-600 rounded-full hover:bg-primary hover:text-white transition-colors social-icon">
+                                    <i class="ri-instagram-fill"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-lg shadow-sm h-64 relative overflow-hidden">
+                        <div style="background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png'); background-position: center; background-size: cover; position: absolute; top: 0; left: 0; right: 0; bottom: 0;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-16 bg-secondary text-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="mb-8 md:mb-0 md:mr-12">
+                    <h3 class="text-2xl font-semibold mb-4">Subscribe to Our Newsletter</h3>
+                    <p class="text-gray-300 max-w-xl">Stay updated with the latest news, industry insights, and technology trends. Subscribe to our newsletter today.</p>
+                </div>
+                <div class="w-full md:w-2/5">
+                    <form class="flex flex-col sm:flex-row gap-4">
+                        <input type="email" placeholder="Enter your email address" class="flex-grow px-4 py-3 rounded-l-lg border-none focus:outline-none text-gray-800">
+                        <button type="submit" class="bg-primary text-white px-6 py-3 rounded-r-lg font-medium hover:bg-blue-700 transition-colors whitespace-nowrap !rounded-button">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <a href="#" class="text-2xl font-['Pacifico'] text-white mb-6 inline-block">Intec Vision</a>
+                    <p class="text-gray-400 mb-6">
+                        Providing innovative IT solutions that drive business growth and digital transformation.
+                    </p>
+                    <div class="main">
+  <div class="up">
+    <button class="card1">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0,256,256" width="30px" height="30px" fill-rule="nonzero" class="instagram"><g fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(8,8)"><path d="M11.46875,5c-3.55078,0 -6.46875,2.91406 -6.46875,6.46875v9.0625c0,3.55078 2.91406,6.46875 6.46875,6.46875h9.0625c3.55078,0 6.46875,-2.91406 6.46875,-6.46875v-9.0625c0,-3.55078 -2.91406,-6.46875 -6.46875,-6.46875zM11.46875,7h9.0625c2.47266,0 4.46875,1.99609 4.46875,4.46875v9.0625c0,2.47266 -1.99609,4.46875 -4.46875,4.46875h-9.0625c-2.47266,0 -4.46875,-1.99609 -4.46875,-4.46875v-9.0625c0,-2.47266 1.99609,-4.46875 4.46875,-4.46875zM21.90625,9.1875c-0.50391,0 -0.90625,0.40234 -0.90625,0.90625c0,0.50391 0.40234,0.90625 0.90625,0.90625c0.50391,0 0.90625,-0.40234 0.90625,-0.90625c0,-0.50391 -0.40234,-0.90625 -0.90625,-0.90625zM16,10c-3.30078,0 -6,2.69922 -6,6c0,3.30078 2.69922,6 6,6c3.30078,0 6,-2.69922 6,-6c0,-3.30078 -2.69922,-6 -6,-6zM16,12c2.22266,0 4,1.77734 4,4c0,2.22266 -1.77734,4 -4,4c-2.22266,0 -4,-1.77734 -4,-4c0,-2.22266 1.77734,-4 4,-4z"></path></g></g></svg>
+    </button>
+    <button class="card2">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="30px" height="30px" class="twitter"><path d="M42,12.429c-1.323,0.586-2.746,0.977-4.247,1.162c1.526-0.906,2.7-2.351,3.251-4.058c-1.428,0.837-3.01,1.452-4.693,1.776C34.967,9.884,33.05,9,30.926,9c-4.08,0-7.387,3.278-7.387,7.32c0,0.572,0.067,1.129,0.193,1.67c-6.138-0.308-11.582-3.226-15.224-7.654c-0.64,1.082-1,2.349-1,3.686c0,2.541,1.301,4.778,3.285,6.096c-1.211-0.037-2.351-0.374-3.349-0.914c0,0.022,0,0.055,0,0.086c0,3.551,2.547,6.508,5.923,7.181c-0.617,0.169-1.269,0.263-1.941,0.263c-0.477,0-0.942-0.054-1.392-0.135c0.94,2.902,3.667,5.023,6.898,5.086c-2.528,1.96-5.712,3.134-9.174,3.134c-0.598,0-1.183-0.034-1.761-0.104C9.268,36.786,13.152,38,17.321,38c13.585,0,21.017-11.156,21.017-20.834c0-0.317-0.01-0.633-0.025-0.945C39.763,15.197,41.013,13.905,42,12.429"></path></svg>
+    </button>
+  </div>
+  <div class="down">
+    <button class="card3">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="30px" height="30px" class="github">    <path d="M15,3C8.373,3,3,8.373,3,15c0,5.623,3.872,10.328,9.092,11.63C12.036,26.468,12,26.28,12,26.047v-2.051 c-0.487,0-1.303,0-1.508,0c-0.821,0-1.551-0.353-1.905-1.009c-0.393-0.729-0.461-1.844-1.435-2.526 c-0.289-0.227-0.069-0.486,0.264-0.451c0.615,0.174,1.125,0.596,1.605,1.222c0.478,0.627,0.703,0.769,1.596,0.769 c0.433,0,1.081-0.025,1.691-0.121c0.328-0.833,0.895-1.6,1.588-1.962c-3.996-0.411-5.903-2.399-5.903-5.098 c0-1.162,0.495-2.286,1.336-3.233C9.053,10.647,8.706,8.73,9.435,8c1.798,0,2.885,1.166,3.146,1.481C13.477,9.174,14.461,9,15.495,9 c1.036,0,2.024,0.174,2.922,0.483C18.675,9.17,19.763,8,21.565,8c0.732,0.731,0.381,2.656,0.102,3.594 c0.836,0.945,1.328,2.066,1.328,3.226c0,2.697-1.904,4.684-5.894,5.097C18.199,20.49,19,22.1,19,23.313v2.734 c0,0.104-0.023,0.179-0.035,0.268C23.641,24.676,27,20.236,27,15C27,8.373,21.627,3,15,3z"></path></svg>
+    </button>
+    <button class="card4">
+      <svg height="30px" width="30px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" class="discord"><path d="M40,12c0,0-4.585-3.588-10-4l-0.488,0.976C34.408,10.174,36.654,11.891,39,14c-4.045-2.065-8.039-4-15-4s-10.955,1.935-15,4c2.346-2.109,5.018-4.015,9.488-5.024L18,8c-5.681,0.537-10,4-10,4s-5.121,7.425-6,22c5.162,5.953,13,6,13,6l1.639-2.185C13.857,36.848,10.715,35.121,8,32c3.238,2.45,8.125,5,16,5s12.762-2.55,16-5c-2.715,3.121-5.857,4.848-8.639,5.815L33,40c0,0,7.838-0.047,13-6C45.121,19.425,40,12,40,12z M17.5,30c-1.933,0-3.5-1.791-3.5-4c0-2.209,1.567-4,3.5-4s3.5,1.791,3.5,4C21,28.209,19.433,30,17.5,30z M30.5,30c-1.933,0-3.5-1.791-3.5-4c0-2.209,1.567-4,3.5-4s3.5,1.791,3.5,4C34,28.209,32.433,30,30.5,30z"></path></svg>
+    </button>
+  </div>
+</div>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-semibold mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="#portfolio" class="text-gray-400 hover:text-white transition-colors">Portfolio</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-semibold mb-6">Our Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Web Development</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Mobile App Development</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Cloud Solutions</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Data Analytics</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Cybersecurity</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">IT Consulting</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-semibold mb-6">Contact Us</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="ri-map-pin-line mr-3 mt-1"></i>
+                            <span class="text-gray-400">123 Business Avenue, Tech Park, Bangalore, India</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-phone-line mr-3 mt-1"></i>
+                            <span class="text-gray-400">+91 98765 43210</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-mail-line mr-3 mt-1"></i>
+                            <span class="text-gray-400">info@intecvisionsolutions.in</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-time-line mr-3 mt-1"></i>
+                            <span class="text-gray-400">Monday - Friday: 9:00 AM - 6:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-gray-800 text-center">
+                <p class="text-gray-400">&copy; 2025 Intec Vision Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300">
+        <i class="ri-arrow-up-line ri-lg"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script id="mobile-menu-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+                if (mobileMenuButton.querySelector('i').classList.contains('ri-menu-line')) {
+                    mobileMenuButton.querySelector('i').classList.remove('ri-menu-line');
+                    mobileMenuButton.querySelector('i').classList.add('ri-close-line');
+                } else {
+                    mobileMenuButton.querySelector('i').classList.remove('ri-close-line');
+                    mobileMenuButton.querySelector('i').classList.add('ri-menu-line');
+                }
+            });
+            
+            // Close mobile menu when clicking on a link
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuButton.querySelector('i').classList.remove('ri-close-line');
+                    mobileMenuButton.querySelector('i').classList.add('ri-menu-line');
+                });
+            });
+        });
+    </script>
+
+    <script id="sticky-header-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            const header = document.querySelector('header');
+            
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 100) {
+                    header.classList.add('shadow-md');
+                } else {
+                    header.classList.remove('shadow-md');
+                }
+            });
+        });
+    </script>
+
+    <script id="portfolio-filter-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.portfolio-filter');
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('active', 'bg-primary', 'text-white');
+                        btn.classList.add('text-gray-700');
+                    });
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active', 'bg-primary', 'text-white');
+                    this.classList.remove('text-gray-700');
+                    
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Show/hide portfolio items based on filter
+                    portfolioItems.forEach(item => {
+                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+
+    <script id="back-to-top-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            const backToTopButton = document.getElementById('back-to-top');
+            
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 300) {
+                    backToTopButton.classList.remove('opacity-0', 'invisible');
+                    backToTopButton.classList.add('opacity-100', 'visible');
+                } else {
+                    backToTopButton.classList.remove('opacity-100', 'visible');
+                    backToTopButton.classList.add('opacity-0', 'invisible');
+                }
+            });
+            
+            backToTopButton.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+    <script id="contact-form-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contact-form');
+            
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form values
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const phone = document.getElementById('phone').value;
+                const service = document.getElementById('service').value;
+                const message = document.getElementById('message').value;
+                const consent = document.getElementById('consent').checked;
+                
+                // Validate form
+                if (!name || !email || !message || !consent) {
+                    alert('Please fill in all required fields and agree to the privacy policy.');
+                    return;
+                }
+                
+                // Simulate form submission
+                alert('Thank you for your message! We will get back to you soon.');
+                contactForm.reset();
+            });
+        });
+    </script>
+
+    <script id="smooth-scroll-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('a[href^="#"]');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        const offsetTop = targetElement.getBoundingClientRect().top + window.pageYOffset - 80;
+                        
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
