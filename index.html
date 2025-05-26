@@ -12,6 +12,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+
+    <!-- AOS CSS -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+<!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<!-- AOS CSS -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
    
    <script>
       tailwind.config={
@@ -583,19 +598,14 @@ button:active {
 <section id="about" class="py-20 bg-gray-50">
   <canvas id="particle-canvas"></canvas>
 
-  <div class="container mx-auto px-4">
-    <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-4xl font-bold text-secondary mb-4">About Intec Vision Solutions</h2>
-      <p class="text-gray-600 max-w-3xl mx-auto">We are a team of passionate IT professionals dedicated to delivering innovative solutions that drive business growth and digital transformation.</p>
-    </div>
-
-    <div class="flex flex-col md:flex-row items-center">
-      <div class="w-full md:w-1/2 mb-12 md:mb-0 pr-0 md:pr-12 text-center mx-auto max-w-lg">
+  <div class="flex flex-col md:flex-row items-center md:items-start">
+  <!-- TEXT SECTION -->
+  <div class="w-full md:w-1/2 mb-12 md:mb-0 md:pr-12 text-left">
         <h3 class="text-2xl font-semibold text-secondary mb-6">What We Stand For</h3>
         <p class="text-gray-700 mb-6">
-          At the core of our company is a commitment to innovation and integrity. We believe technology should empower, not complicate.
-          Our mission is to deliver smart, scalable IT solutions that drive business growth.
-        </p>
+         At the core of our company is a commitment to innovation and integrity. We believe technology should empower, not complicate. Our mission is to deliver smart, scalable IT solutions that drive business growth. We stand for reliability in every system, every line of code, every deployment.
+Security isn’t just a feature—it’s a fundamental promise to our clients. We prioritize transparency in communication and accountability in action.Customer success is our success; we don’t just support—we partner. We champion continuous learning to stay ahead of a rapidly evolving tech landscape. Every challenge is an opportunity to innovate and improve.
+We believe in building future-ready infrastructures, not temporary fixes. We respect deadlines, budgets, and the trust our clients place in us.  
         <p class="text-gray-700 mb-6">
           Security isn’t just a feature—it’s a fundamental promise to our clients. Customer success is our success; we don’t just support—we partner.
         </p>
@@ -606,6 +616,7 @@ button:active {
           Know More
         </button>
       </div>
+
 
       <div class="w-full md:w-1/2 flex justify-center">
         <div class="relative max-w-xl w-full">
@@ -727,7 +738,12 @@ button:active {
 
  
     <!-- Services Section -->
-    <section id="services" class="py-20 relative bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500 overflow-hidden">
+    <section id="services" 
+         class="py-20 relative bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500 overflow-hidden"
+         data-aos="fade-up"
+         data-aos-offset="200"
+         data-aos-delay="100"
+         data-aos-duration="1000">
   <!-- 🚀 Rocket Element -->
 <!-- 🚀 Rocket Element -->
    <!-- 🚀 Rocket -->
@@ -744,7 +760,7 @@ button:active {
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Service 1 -->
-                <div class="service-card bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+                <div class="service-card ... bg-white p-8 rounded-lg shadow-sm border border-gray-100" data-aos="zoom-in" data-aos-delay="100">
                     <div class="w-16 h-16 flex items-center justify-center bg-blue-50 text-primary rounded-full mb-6">
                         <i class="ri-code-s-slash-line ri-2x"></i>
                     </div>
@@ -774,7 +790,7 @@ button:active {
                 </div>
                 
                 <!-- Service 2 -->
-                <div class="service-card bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+               <div class="service-card ... bg-white p-8 rounded-lg shadow-sm border border-gray-100" data-aos="zoom-in" data-aos-delay="100">
                     <div class="w-16 h-16 flex items-center justify-center bg-blue-50 text-primary rounded-full mb-6">
                         <i class="ri-smartphone-line ri-2x"></i>
                     </div>
@@ -804,7 +820,7 @@ button:active {
                 </div>
                 
                 <!-- Service 3 -->
-                <div class="service-card bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+                <div class="service-card ... bg-white p-8 rounded-lg shadow-sm border border-gray-100" data-aos="zoom-in" data-aos-delay="100">
                     <div class="w-16 h-16 flex items-center justify-center bg-blue-50 text-primary rounded-full mb-6">
                         <i class="ri-cloud-line ri-2x"></i>
                     </div>
@@ -834,7 +850,7 @@ button:active {
                 </div>
                 
                 <!-- Service 4 -->
-                <div class="service-card bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+              <div class="service-card ... bg-white p-8 rounded-lg shadow-sm border border-gray-100" data-aos="zoom-in" data-aos-delay="100">
                     <div class="w-16 h-16 flex items-center justify-center bg-blue-50 text-primary rounded-full mb-6">
                         <i class="ri-database-2-line ri-2x"></i>
                     </div>
@@ -864,7 +880,7 @@ button:active {
                 </div>
                 
                 <!-- Service 5 -->
-                <div class="service-card bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+              <div class="service-card ... bg-white p-8 rounded-lg shadow-sm border border-gray-100" data-aos="zoom-in" data-aos-delay="100">
                     <div class="w-16 h-16 flex items-center justify-center bg-blue-50 text-primary rounded-full mb-6">
                         <i class="ri-shield-check-line ri-2x"></i>
                     </div>
@@ -894,7 +910,7 @@ button:active {
                 </div>
                 
                 <!-- Service 6 -->
-                <div class="service-card bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+                <div class="service-card ... bg-white p-8 rounded-lg shadow-sm border border-gray-100"  data-aos="zoom-in" data-aos-delay="100">
                     <div class="w-16 h-16 flex items-center justify-center bg-blue-50 text-primary rounded-full mb-6">
                         <i class="ri-customer-service-2-line ri-2x"></i>
                     </div>
@@ -940,14 +956,13 @@ button:active {
                 <p class="text-gray-600 max-w-3xl mx-auto">Take a look at some of our recent projects and see how we've helped businesses achieve their goals through innovative IT solutions.</p>
             </div>
             
-            <div class="flex justify-center mb-10">
-                <div class="inline-flex bg-white p-1 rounded-full shadow-sm">
-                    <button class="portfolio-filter active px-6 py-2 rounded-full text-white bg-primary font-medium whitespace-nowrap !rounded-full" data-filter="all">All Projects</button>
-                    <button class="portfolio-filter px-6 py-2 rounded-full text-gray-700 font-medium  transition-colors whitespace-nowrap !rounded-full" data-filter="web">Web Development</button>
-                    <button class="portfolio-filter px-6 py-2 rounded-full text-gray-700 font-medium  transition-colors whitespace-nowrap !rounded-full" data-filter="mobile">Mobile Apps</button>
-                    <button class="portfolio-filter px-6 py-2 rounded-full text-gray-700 font-medium  transition-colors whitespace-nowrap !rounded-full" data-filter="cloud">Cloud Solutions</button>
-                </div>
-            </div>
+           <div class="flex flex-wrap justify-center bg-white p-1 rounded-full shadow-sm gap-2">
+    <button class="portfolio-filter active px-6 py-2 rounded-full text-white bg-primary font-medium !rounded-full" data-filter="all">All Projects</button>
+    <button class="portfolio-filter px-6 py-2 rounded-full text-gray-700 font-medium transition-colors !rounded-full" data-filter="web">Web Development</button>
+    <button class="portfolio-filter px-6 py-2 rounded-full text-gray-700 font-medium transition-colors !rounded-full" data-filter="mobile">Mobile Apps</button>
+    <button class="portfolio-filter px-6 py-2 rounded-full text-gray-700 font-medium transition-colors !rounded-full" data-filter="cloud">Cloud Solutions</button>
+</div>
+
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Portfolio Item 1 -->
@@ -1085,92 +1100,136 @@ button:active {
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-secondary mb-4">What Our Clients Say</h2>
-                <p class="text-gray-600 max-w-3xl mx-auto">Don't just take our word for it. Here's what our clients have to say about our services and solutions.</p>
+   <!-- Testimonials Section -->
+<section class="py-20 bg-white overflow-hidden">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-secondary mb-4">What Our Clients Say</h2>
+      <p class="text-gray-600 max-w-3xl mx-auto">Don't just take our word for it. Here's what our clients have to say about our services and solutions.</p>
+    </div>
+
+    <!-- Scrolling Testimonials Wrapper -->
+    <div class="relative group overflow-hidden">
+      <di class="flex animate-scroll-x space-x-8 px-4">
+        
+        <!-- Repeat testimonials twice for infinite scroll -->
+        <!-- Loop Start -->
+        <template id="testimonial-template">
+          <div class="min-w-[300px] bg-gray-50 p-8 rounded-lg shadow-sm border border-gray-100">
+            <div class="flex items-center mb-6">
+              <div class="text-primary">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+              </div>
             </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Testimonial 1 -->
-                <div class="bg-gray-50 p-8 rounded-lg shadow-sm border border-gray-100">
-                    <div class="flex items-center mb-6">
-                        <div class="text-primary">
-                            <i class="ri-star-fill"></i>
-                            <i class="ri-star-fill"></i>
-                            <i class="ri-star-fill"></i>
-                            <i class="ri-star-fill"></i>
-                            <i class="ri-star-fill"></i>
-                        </div>
-                    </div>
-                    <p class="text-gray-700 mb-6 italic">
-                        "Intec Vision Solutions transformed our business with their innovative IT solutions. Their team was professional, responsive, and delivered beyond our expectations. We've seen a significant improvement in our operational efficiency and customer satisfaction."
-                    </p>
-                    <div class="flex items-center">
-                        <div class="w-12 h-12 bg-gray-300 rounded-full overflow-hidden mr-4">
-                            <img src="https://readdy.ai/api/search-image?query=professional%20business%20man%20portrait%2C%20corporate%20headshot%2C%20neutral%20background%2C%20professional%20attire%2C%20confident%20expression&width=100&height=100&seq=9&orientation=squarish" alt="Client" class="w-full h-full object-cover">
-                        </div>
-                        <div>
-                            <h4 class="text-secondary font-semibold">Michael Richardson</h4>
-                            <p class="text-gray-600 text-sm">CEO, Global Retail Solutions</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Testimonial 2 -->
-                <div class="bg-gray-50 p-8 rounded-lg shadow-sm border border-gray-100">
-                    <div class="flex items-center mb-6">
-                        <div class="text-primary">
-                            <i class="ri-star-fill"></i>
-                            <i class="ri-star-fill"></i>
-                            <i class="ri-star-fill"></i>
-                            <i class="ri-star-fill"></i>
-                            <i class="ri-star-fill"></i>
-                        </div>
-                    </div>
-                    <p class="text-gray-700 mb-6 italic">
-                        "Working with Intec Vision Solutions on our mobile app development project was a fantastic experience. Their team understood our requirements perfectly and delivered a high-quality app that our customers love. Their ongoing support has been exceptional."
-                    </p>
-                    <div class="flex items-center">
-                        <div class="w-12 h-12 bg-gray-300 rounded-full overflow-hidden mr-4">
-                            <img src="https://readdy.ai/api/search-image?query=professional%20business%20woman%20portrait%2C%20corporate%20headshot%2C%20neutral%20background%2C%20professional%20attire%2C%20confident%20expression&width=100&height=100&seq=10&orientation=squarish" alt="Client" class="w-full h-full object-cover">
-                        </div>
-                        <div>
-                            <h4 class="text-secondary font-semibold">Samantha Johnson</h4>
-                            <p class="text-gray-600 text-sm">Marketing Director, HealthTech Inc.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Testimonial 3 -->
-                <div class="bg-gray-50 p-8 rounded-lg shadow-sm border border-gray-100">
-                    <div class="flex items-center mb-6">
-                        <div class="text-primary">
-                            <i class="ri-star-fill"></i>
-                            <i class="ri-star-fill"></i>
-                            <i class="ri-star-fill"></i>
-                            <i class="ri-star-fill"></i>
-                            <i class="ri-star-fill"></i>
-                        </div>
-                    </div>
-                    <p class="text-gray-700 mb-6 italic">
-                        "Intec Vision Solutions helped us migrate our infrastructure to the cloud seamlessly. Their expertise in cloud solutions saved us time and money, and their team was always available to address our concerns. We highly recommend their services."
-                    </p>
-                    <div class="flex items-center">
-                        <div class="w-12 h-12 bg-gray-300 rounded-full overflow-hidden mr-4">
-                            <img src="https://readdy.ai/api/search-image?query=professional%20business%20man%20portrait%2C%20corporate%20headshot%2C%20neutral%20background%2C%20professional%20attire%2C%20confident%20expression%2C%20different%20from%20the%20first%20man&width=100&height=100&seq=11&orientation=squarish" alt="Client" class="w-full h-full object-cover">
-                        </div>
-                        <div>
-                            <h4 class="text-secondary font-semibold">David Thompson</h4>
-                            <p class="text-gray-600 text-sm">CTO, Financial Services Group</p>
-                        </div>
-                    </div>
-                </div>
+            <p class="text-gray-700 mb-6 italic">
+              "Intec Vision Solutions transformed our business with their innovative IT solutions. <br> Their team was professional, responsive, and delivered beyond our expectations. <br> We've seen a significant improvement in our operational efficiency and customer <br> satisfaction."
+            </p>
+            <div class="flex items-center">
+              <div class="w-12 h-12 bg-gray-300 rounded-full overflow-hidden mr-4 ">
+                <img src="https://readdy.ai/api/search-image?query=professional%20business%20man%20portrait%2C%20corporate%20headshot%2C%20neutral%20background%2C%20professional%20attire%2C%20confident%20expression&width=100&height=100&seq=9&orientation=squarish" alt="Client" class="w-full h-full object-cover">
+              </div>
+              <div>
+                <h4 class="text-secondary font-semibold">Michael Richardson</h4>
+                <p class="text-gray-600 text-sm">CEO, Global Retail Solutions</p>
+              </div>
             </div>
-        </div>
-    </section>
+          </div>
+
+          <div class="min-w-[300px] bg-gray-50 p-8 rounded-lg shadow-sm border border-gray-100">
+            <div class="flex items-center mb-6">
+              <div class="text-primary">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+              </div>
+            </div>
+            <p class="text-gray-700 mb-6 italic">
+              "Working with Intec Vision Solutions on our mobile app development project was a fantastic experience. <br> Their team understood our requirements perfectly and delivered a high-quality app that our  customers <br> love. Their ongoing support has been exceptional."
+            </p>
+            <div class="flex items-center">
+              <div class="w-12 h-12 bg-gray-300 rounded-full overflow-hidden mr-4">
+                <img src="https://readdy.ai/api/search-image?query=professional%20business%20woman%20portrait%2C%20corporate%20headshot%2C%20neutral%20background%2C%20professional%20attire%2C%20confident%20expression&width=100&height=100&seq=10&orientation=squarish" alt="Client" class="w-full h-full object-cover">
+              </div>
+              <div>
+                <h4 class="text-secondary font-semibold">Samantha Johnson</h4>
+                <p class="text-gray-600 text-sm">Marketing Director, HealthTech Inc.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="min-w-[300px] bg-gray-50 p-8 rounded-lg shadow-sm border border-gray-100">
+            <div class="flex items-center mb-6">
+              <div class="text-primary">
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+              </div>
+            </div>
+            <p class="text-gray-700 mb-6 italic">
+              "Intec Vision Solutions helped us migrate our infrastructure to the cloud seamlessly.  Their <br> expertise in cloud solutions  saved us time and money,  and their team was always <br> available to  address our concerns. "
+            </p>
+            <div class="flex items-center">
+              <div class="w-12 h-12 bg-gray-300 rounded-full overflow-hidden mr-4">
+                <img src="https://readdy.ai/api/search-image?query=professional%20business%20man%20portrait%2C%20corporate%20headshot%2C%20neutral%20background%2C%20professional%20attire%2C%20confident%20expression%2C%20different%20from%20the%20first%20man&width=100&height=100&seq=11&orientation=squarish" alt="Client" class="w-full h-full object-cover">
+              </div>
+              <div>
+                <h4 class="text-secondary font-semibold">David Thompson</h4>
+                <p class="text-gray-600 text-sm">CTO, Financial Services Group</p>
+              </div>
+            </div>
+          </div>
+        </template>
+
+        <!-- JavaScript will duplicate testimonials twice -->
+      </di
+    </div>
+  </div>
+</section>
+
+<!-- Scroll Animation CSS -->
+<style>
+@keyframes scrollX {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll-x {
+  animation: scrollX 30s linear infinite;
+  display: flex;
+  width: max-content;
+}
+
+/* Hover pe animation stop ho */
+.group:hover .animate-scroll-x {
+  animation-play-state: paused;
+}
+</style>
+
+<!-- Script to duplicate testimonials -->
+<script>
+  const container = document.querySelector('.animate-scroll-x');
+  const template = document.getElementById('testimonial-template');
+
+  if (container && template) {
+    for (let i = 0; i < 2; i++) {
+      const content = template.content.cloneNode(true);
+      container.appendChild(content);
+    }
+  }
+</script>
+
 <section class="py-20 bg-primary text-white">
     <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -1626,5 +1685,59 @@ button:active {
             });
         });
     </script>
+
+    <script>
+  AOS.init({
+    duration: 1000,  // animation kitni der chale
+    once: true       // ek baar hi chale scroll par
+  });
+
+
+</script>
+
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Container jisko animate karna hai
+  gsap.from("#about .container > div", {
+    scrollTrigger: {
+      trigger: "#about",
+      start: "top 80%",  // jab about section top viewport ke 80% par aaye
+      toggleActions: "play none none none", // ek baar play kare
+    },
+    opacity: 0,
+    y: 50,
+    duration: 1,
+    stagger: 0.3,  // elements thoda thoda delay ke sath animate honge
+    ease: "power3.out"
+  });
+
+
+
+
+  gsap.from("#about h2, #about h3, #about p, #about button", {
+  scrollTrigger: {
+    trigger: "#about",
+    start: "top 80%",
+    toggleActions: "play none none none",
+  },
+  opacity: 0,
+  y: 30,
+  duration: 0.8,
+  stagger: 0.2,
+  ease: "power2.out",
+});
+</script>
+
+<!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    once: true, // animation happens only once
+    duration: 800, // animation duration in ms
+    easing: 'ease-in-out',
+  });
+</script>
+
 </body>
 </html>
