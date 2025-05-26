@@ -46,35 +46,49 @@
     </script>
     <style>
         :where([class^="ri-"])::before { content: "\f3c2"; }
+       
         
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Poppins', sans-serif;
-        }
+* {
+    box-sizing: border-box;
+}
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+
+       html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Inter', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+}
+
         
         .hero-bg {
-            background: linear-gradient(135deg, #0B1736 0%, #1E40AF 100%);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero-bg::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
-            opacity: 0.5;
-        }
+    background: linear-gradient(135deg, #0B1736 0%, #1E40AF 100%);
+    position: relative;
+    overflow: hidden;
+}
+.hero-section {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.hero-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url("svg pattern");
+    opacity: 0.5;
+}
         
         .service-card {
             transition: all 0.3s ease;
@@ -496,7 +510,6 @@ button:active {
     opacity: 1;
     transform: translate(120vw, -120vh); /* go diagonally off-screen */
   }
-
 
 
 
@@ -930,9 +943,9 @@ button:active {
             <div class="flex justify-center mb-10">
                 <div class="inline-flex bg-white p-1 rounded-full shadow-sm">
                     <button class="portfolio-filter active px-6 py-2 rounded-full text-white bg-primary font-medium whitespace-nowrap !rounded-full" data-filter="all">All Projects</button>
-                    <button class="portfolio-filter px-6 py-2 rounded-full text-gray-700 font-medium hover:bg-gray-100 transition-colors whitespace-nowrap !rounded-full" data-filter="web">Web Development</button>
-                    <button class="portfolio-filter px-6 py-2 rounded-full text-gray-700 font-medium hover:bg-gray-100 transition-colors whitespace-nowrap !rounded-full" data-filter="mobile">Mobile Apps</button>
-                    <button class="portfolio-filter px-6 py-2 rounded-full text-gray-700 font-medium hover:bg-gray-100 transition-colors whitespace-nowrap !rounded-full" data-filter="cloud">Cloud Solutions</button>
+                    <button class="portfolio-filter px-6 py-2 rounded-full text-gray-700 font-medium  transition-colors whitespace-nowrap !rounded-full" data-filter="web">Web Development</button>
+                    <button class="portfolio-filter px-6 py-2 rounded-full text-gray-700 font-medium  transition-colors whitespace-nowrap !rounded-full" data-filter="mobile">Mobile Apps</button>
+                    <button class="portfolio-filter px-6 py-2 rounded-full text-gray-700 font-medium  transition-colors whitespace-nowrap !rounded-full" data-filter="cloud">Cloud Solutions</button>
                 </div>
             </div>
             
@@ -1187,7 +1200,7 @@ button:active {
 
   function animateStat(element) {
     const target = parseInt(element.getAttribute('data-target'));
-    const duration = 2000; // total animation duration per cycle in ms
+    const duration = 2000; // total animation duration in ms
     const stepTime = duration / target;
 
     let current = 0;
@@ -1198,52 +1211,42 @@ button:active {
 
       if (current < target) {
         setTimeout(update, stepTime);
-      } else {
-        // Pause for 1 second and restart counting
-        setTimeout(() => {
-          current = 0;
-          element.textContent = "0+";
-          update();
-        }, 1000);
       }
     }
 
-    update();
+    update(); // Start the animation
   }
 
-  // Start animation for each stat element
+  // Start animation for each stat element once
   statElements.forEach(el => {
     animateStat(el);
   });
 </script>
 
 
+
 <script>
   const yearsElement = document.getElementById('stats-years');
   const maxYears = 10;
-  const duration = 2000; // Total time to count up in milliseconds
-  const delay = 50;      // Delay between increments in ms
+  const duration = 2000; // Total time to count up
+  const stepTime = duration / maxYears;
 
   function animateYears() {
     let current = 0;
-    const stepTime = duration / maxYears;
 
     const interval = setInterval(() => {
       current++;
       yearsElement.textContent = current + "+";
+
       if (current >= maxYears) {
-        clearInterval(interval);
-        // After short pause, restart animation
-        setTimeout(() => {
-          yearsElement.textContent = "0+";
-          animateYears();
-        }, 1000);
+        clearInterval(interval); // Stop after reaching target
       }
     }, stepTime);
   }
 
-  animateYears();
+  animateYears(); // Run once
 </script>
+
 
     <!-- Contact Section -->
     <section id="contact" class="py-20 bg-gray-50">
