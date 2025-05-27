@@ -1175,28 +1175,68 @@ We believe in building future-ready infrastructures, not temporary fixes. We res
 
   <!-- Filter Script -->
   <script>
-    const filterButtons = document.querySelectorAll('.portfolio-filter');
-    const items = document.querySelectorAll('.portfolio-item');
+  const filterButtons = document.querySelectorAll('.portfolio-filter');
+  const scrollRows = document.querySelectorAll('.portfolio-row');
+  const scrollContainers = document.querySelectorAll('.portfolio-row').length;
 
-    function showFilteredItems(category) {
-      items.forEach(item => {
-        const itemCategory = item.getAttribute('data-category');
-        item.style.display = (category === 'all' || itemCategory === category) ? 'block' : 'none';
+  function showFilteredItems(category) {
+    const allScrollSections = document.querySelectorAll('.animate-scroll-rtl, .animate-scroll-ltr');
+    const allItems = document.querySelectorAll('.portfolio-item');
+
+    if (category === 'all') {
+      // Show scroll rows again
+      document.querySelectorAll('.portfolio-row').forEach(row => {
+        row.parentElement.style.display = 'flex';
       });
+    } else {
+      // Hide scroll rows
+      document.querySelectorAll('.portfolio-row').forEach(row => {
+        row.parentElement.style.display = 'none';
+      });
+
+      // Create static container if not already present
+      let staticContainer = document.getElementById('static-portfolio');
+      if (!staticContainer) {
+        staticContainer = document.createElement('div');
+        staticContainer.id = 'static-portfolio';
+        staticContainer.className = 'flex flex-wrap justify-center gap-8';
+        document.querySelector('#portfolio .container').insertBefore(staticContainer, document.querySelector('#portfolio .text-center + div + div'));
+      }
+
+      // Clear old items
+      staticContainer.innerHTML = '';
+
+      // Filter and clone matching items
+      allItems.forEach(item => {
+        if (item.getAttribute('data-category') === category) {
+          const clone = item.cloneNode(true);
+          staticContainer.appendChild(clone);
+        }
+      });
+
+      staticContainer.style.display = 'flex';
     }
 
-    filterButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        const filter = button.getAttribute('data-filter');
-        filterButtons.forEach(btn => btn.classList.remove('bg-primary', 'text-white'));
-        button.classList.add('bg-primary', 'text-white');
-        showFilteredItems(filter);
-      });
-    });
+    // Hide static container if 'all'
+    const staticContainer = document.getElementById('static-portfolio');
+    if (category === 'all' && staticContainer) {
+      staticContainer.style.display = 'none';
+    }
+  }
 
-    // Initial Load
-    showFilteredItems('all');
-  </script>
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const filter = button.getAttribute('data-filter');
+      filterButtons.forEach(btn => btn.classList.remove('bg-primary', 'text-white'));
+      button.classList.add('bg-primary', 'text-white');
+      showFilteredItems(filter);
+    });
+  });
+
+  // Initial Load
+  showFilteredItems('all');
+</script>
+
 </section>
 
 
