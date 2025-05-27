@@ -545,8 +545,10 @@ button:active {
 <body class="bg-white text-gray-800">
     <!-- Header -->
     <header class="fixed w-full z-50 transition-all duration-300 sticky-header">
-        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
-            <a href="#" class="text-2xl font-['Pacifico'] text-secondary">G5 Vision </a>
+  <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+    <a href="#">
+      <img src="image/Blue Waves Surfing Club Logo.png" alt="G5 Vision Logo" class="h-10" />
+    </a>
             
             <nav class="hidden md:flex items-center space-x-8">
                 <a href="#home" class="nav-link font-medium text-gray-800 hover:text-primary transition-colors">Home</a>
@@ -1044,6 +1046,11 @@ We believe in building future-ready infrastructures, not temporary fixes. We res
           </div>
         </div>
 
+
+
+
+        
+
         <div class="portfolio-item bg-white rounded-lg shadow-md overflow-hidden w-72 flex-shrink-0" data-category="mobile">
           <img src="image/1.png" alt="Project 2" class="w-full h-48 object-cover" />
           <div class="p-4">
@@ -1101,69 +1108,99 @@ We believe in building future-ready infrastructures, not temporary fixes. We res
   <!-- Scroll Animations -->
   <style>
     @keyframes scrollLeftToRight {
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(100%); }
-    }
-    @keyframes scrollRightToLeft {
-      0% { transform: translateX(100%); }
-      100% { transform: translateX(-100%); }
-    }
-    .animate-scroll-ltr {
-      animation: scrollLeftToRight 10s linear infinite;
-    }
-    .animate-scroll-rtl {
-      animation: scrollRightToLeft 10s linear infinite;
-    }
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes scrollRightToLeft {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-scroll-ltr {
+  animation: scrollLeftToRight 10s linear forwards; /* forwards to keep final state */
+}
+
+.animate-scroll-rtl {
+  animation: scrollRightToLeft 10s linear forwards;
+}
+
+
+.portfolio-row {
+  width: calc(3 * 288px + 2 * 32px); /* adjust gap count as needed */
+}
   </style>
 
   <!-- Filtering Script -->
-  <script>
-    const filterButtons = document.querySelectorAll('.portfolio-filter');
-    const items = document.querySelectorAll('.portfolio-item');
-    const scrollRows = document.querySelectorAll('.portfolio-row');
+ <script>
+  const filterButtons = document.querySelectorAll('.portfolio-filter');
+  const items = document.querySelectorAll('.portfolio-item');
+  const scrollRows = document.querySelectorAll('.portfolio-row');
 
-    function stopScrolling() {
-      scrollRows.forEach(row => {
-        row.classList.remove('animate-scroll-rtl', 'animate-scroll-ltr');
-      });
-    }
+  let animationInterval;
 
-    function startScrolling() {
-      const [topRow, bottomRow] = document.querySelectorAll('.portfolio-row');
-      topRow.classList.add('animate-scroll-rtl');
-      bottomRow.classList.add('animate-scroll-ltr');
-    }
-
-    function showFilteredItems(category) {
-      items.forEach(item => {
-        const itemCategory = item.getAttribute('data-category');
-        if (category === 'all' || itemCategory === category) {
-          item.style.display = 'block';
-        } else {
-          item.style.display = 'none';
-        }
-      });
-    }
-
-    filterButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        const filter = button.getAttribute('data-filter');
-        filterButtons.forEach(btn => btn.classList.remove('bg-primary', 'text-white'));
-        button.classList.add('bg-primary', 'text-white');
-
-        if (filter === 'all') {
-          showFilteredItems('all');
-          startScrolling();
-        } else {
-          showFilteredItems(filter);
-          stopScrolling();
-        }
-      });
+  function stopScrolling() {
+    scrollRows.forEach(row => {
+      row.classList.remove('animate-scroll-rtl', 'animate-scroll-ltr');
+      row.style.transform = '';
     });
+  }
 
-    showFilteredItems('all');
-    startScrolling();
-  </script>
+  function startScrolling() {
+    const [topRow, bottomRow] = scrollRows;
+
+    stopScrolling();
+
+    // Trigger reflow on both to reset animations properly
+    void topRow.offsetWidth;
+    void bottomRow.offsetWidth;
+
+    // Start animations simultaneously
+    topRow.classList.add('animate-scroll-rtl');
+    bottomRow.classList.add('animate-scroll-ltr');
+
+    clearTimeout(animationInterval);
+    animationInterval = setTimeout(() => {
+      stopScrolling();
+      setTimeout(startScrolling, 3000);
+    }, 10000);
+  }
+
+  function showFilteredItems(category) {
+    items.forEach(item => {
+      const itemCategory = item.getAttribute('data-category');
+      if (category === 'all' || itemCategory === category) {
+        item.style.display = 'block';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  }
+
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const filter = button.getAttribute('data-filter');
+      filterButtons.forEach(btn => btn.classList.remove('bg-primary', 'text-white'));
+      button.classList.add('bg-primary', 'text-white');
+
+      if (filter === 'all') {
+        showFilteredItems('all');
+        startScrolling();
+      } else {
+        showFilteredItems(filter);
+        clearTimeout(animationInterval);
+        stopScrolling();
+      }
+    });
+  });
+
+  // Initial load with 2 seconds delay
+  showFilteredItems('all');
+  setTimeout(startScrolling, 2000);
+</script>
+
+
+
 </section>
 
     
@@ -1793,7 +1830,7 @@ We believe in building future-ready infrastructures, not temporary fixes. We res
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
                 <div>
-                    <a href="#" class="text-2xl font-['Pacifico'] text-white mb-6 inline-block">Intec Vision</a>
+                   <img src="image/Blue Waves Surfing Club Logo.png"  alt="G5 Vision Logo" class="h-10 " />
                     <p class="text-gray-400 mb-6">
                         Providing innovative IT solutions that drive business growth and digital transformation.
                     </p>
