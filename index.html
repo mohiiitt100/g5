@@ -862,186 +862,253 @@ button:active {
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       <!-- Repeat for all 6 services as per original -->
       <!-- Example for one card -->
-       <!-- Service Card Example -->
-      <div class="relative service-card">
-        <div class="overlay">
-          <svg viewBox="0 0 320 350" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="overlayGradient" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="rgba(30,33,75,0.8)" />
-                <stop offset="50%" stop-color="rgba(12,192,223,0.5)" />
-                <stop offset="100%" stop-color="rgba(30,33,75,0.8)" />
-              </linearGradient>
-            </defs>
-            <path fill="url(#overlayGradient)" d="M0,0 L320,0 L320,320 C240,350 80,350 0,320 Z"/>
-          </svg>
-        </div>
-        <h3 class="text-xl font-semibold text-gray-800 mb-4">Website / Web App Design & Development</h3>
-        <p class="text-gray-600 mb-6">We design and develop custom websites and web applications tailored to your brand and business goals.</p>
-        <ul class="text-gray-600 space-y-2 mb-6">
-          <li class="flex items-start"><i class="ri-check-line text-blue-600 mr-2 mt-1"></i>Custom Website Development</li>
-          <li class="flex items-start"><i class="ri-check-line text-blue-600 mr-2 mt-1"></i>E-commerce Solutions</li>
-          <li class="flex items-start"><i class="ri-check-line text-blue-600 mr-2 mt-1"></i>Web Application Development</li>
-          <li class="flex items-start"><i class="ri-check-line text-blue-600 mr-2 mt-1"></i>CMS Development</li>
-        </ul>
-        <a href="#contact" class="inline-block text-blue-600 font-medium hover:underline">Learn More <i class="ri-arrow-right-line ml-1"></i></a>
-      </div>
+     <!-- Service Card Example 1 -->
+<div class="relative service-card group">
+  <div class="overlay absolute inset-0 z-0">
+    <svg viewBox="0 0 320 350" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="overlayGradient" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="rgba(30,33,75,0.8)" />
+          <stop offset="50%" stop-color="rgba(12,192,223,0.5)" />
+          <stop offset="100%" stop-color="rgba(30,33,75,0.8)" />
+        </linearGradient>
+      </defs>
+      <path fill="url(#overlayGradient)" d="M0,0 L320,0 L320,320 C240,350 80,350 0,320 Z"/>
+    </svg>
+  </div>
+  
+  <div class="relative z-10 p-6">
+    <h3 class="text-xl font-semibold text-gray-800 group-hover:text-white transition-colors duration-300 mb-4">Website / Web App Design & Development</h3>
+    <p class="text-gray-600 group-hover:text-white transition-colors duration-300 mb-6">
+      We design and develop custom websites and web applications tailored to your brand and business goals.
+    </p>
+    <ul class="space-y-2 mb-6">
+      <li class="flex items-start text-gray-600 group-hover:text-white transition-colors duration-300">
+        <i class="ri-check-line text-blue-600 group-hover:text-white mr-2 mt-1 transition-colors duration-300"></i>
+        Custom Website Development
+      </li>
+      <li class="flex items-start text-gray-600 group-hover:text-white transition-colors duration-300">
+        <i class="ri-check-line text-blue-600 group-hover:text-white mr-2 mt-1 transition-colors duration-300"></i>
+        E-commerce Solutions
+      </li>
+      <li class="flex items-start text-gray-600 group-hover:text-white transition-colors duration-300">
+        <i class="ri-check-line text-blue-600 group-hover:text-white mr-2 mt-1 transition-colors duration-300"></i>
+        Web Application Development
+      </li>
+      <li class="flex items-start text-gray-600 group-hover:text-white transition-colors duration-300">
+        <i class="ri-check-line text-blue-600 group-hover:text-white mr-2 mt-1 transition-colors duration-300"></i>
+        CMS Development
+      </li>
+    </ul>
+    <a href="#contact" class="inline-block text-blue-600 group-hover:text-white font-medium hover:underline transition-colors duration-300">
+      Learn More <i class="ri-arrow-right-line ml-1"></i>
+    </a>
+  </div>
+</div>
 
-    <!-- Service 2 -->
-               <div class="service-card ... bg-white p-8 rounded-lg shadow-sm border border-gray-100" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="w-16 h-16 flex items-center justify-center bg-blue-50 text-primary rounded-full mb-6">
+   <!-- Service Card Example 2 -->
+<div class="relative service-card group">
+  <div class="overlay absolute inset-0 z-0">
+    <svg viewBox="0 0 320 350" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="overlayGradient2" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="rgba(30,33,75,0.8)" />
+          <stop offset="50%" stop-color="rgba(12,192,223,0.5)" />
+          <stop offset="100%" stop-color="rgba(30,33,75,0.8)" />
+        </linearGradient>
+      </defs>
+      <path fill="url(#overlayGradient2)" d="M0,0 L320,0 L320,320 C240,350 80,350 0,320 Z"/>
+    </svg>
+  </div>
+  
+  <div class="relative z-10 p-6">
+    <h3 class="text-xl font-semibold text-gray-800 group-hover:text-white transition-colors duration-300 mb-4">Mobile App Design & Development</h3>
+    <p class="text-gray-600 group-hover:text-white transition-colors duration-300 mb-6">
+      Creating user-friendly and performance-optimized mobile apps for Android and iOS platforms.
+    </p>
+    <ul class="space-y-2 mb-6">
+      <li class="flex items-start text-gray-600 group-hover:text-white transition-colors duration-300">
+        <i class="ri-check-line text-blue-600 group-hover:text-white mr-2 mt-1 transition-colors duration-300"></i>
+        Native & Hybrid Apps
+      </li>
+      <li class="flex items-start text-gray-600 group-hover:text-white transition-colors duration-300">
+        <i class="ri-check-line text-blue-600 group-hover:text-white mr-2 mt-1 transition-colors duration-300"></i>
+        UI/UX Design
+      </li>
+      <li class="flex items-start text-gray-600 group-hover:text-white transition-colors duration-300">
+        <i class="ri-check-line text-blue-600 group-hover:text-white mr-2 mt-1 transition-colors duration-300"></i>
+        App Maintenance & Support
+      </li>
+    </ul>
+    <a href="#contact" class="inline-block text-blue-600 group-hover:text-white font-medium hover:underline transition-colors duration-300">
+      Learn More <i class="ri-arrow-right-line ml-1"></i>
+    </a>
+  </div>
+</div>
 
-                        <i class="ri-smartphone-line ri-2x"></i>
-                        
-                    </div>
-                    <h3 class="text-xl font-semibold text-secondary mb-4">UI/UX & Graphics Designing</h3>
-                    <p class="text-gray-600 mb-6">
-                        We craft intuitive user interfaces and engaging user experiences that enhance customer satisfaction. Our graphic design services bring visual appeal and brand identity to life across all platforms.
-                    </p>
-                    <ul class="text-gray-600 space-y-2 mb-6">
-                        <li class="flex items-start">
-                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
-                            <span>Native iOS Development</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
-                            <span>Native Android Development</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
-                            <span>Cross-Platform Development</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
-                            <span>App Maintenance & Support</span>
-                        </li>
-                    </ul>
-                    <a href="#contact" class="inline-block text-primary font-medium hover:underline">Learn More <i class="ri-arrow-right-line ml-1"></i></a>
-                </div>
-                
-                <!-- Service 3 -->
-                <div class="service-card ... bg-white p-8 rounded-lg shadow-sm border border-gray-100" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="w-16 h-16 flex items-center justify-center bg-blue-50 text-primary rounded-full mb-6">
-                        <i class="ri-cloud-line ri-2x"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-secondary mb-4">Mobile App Development</h3>
-                    <p class="text-gray-600 mb-6">
-                     We develop high-performance mobile apps for iOS and Android that deliver seamless user experiences. From concept to launch, we build scalable, feature-rich apps tailored to your business needs.
-                    </p>
-                    <ul class="text-gray-600 space-y-2 mb-6">
-                        <li class="flex items-start">
-                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
-                            <span>Cloud Migration</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
-                            <span>Cloud Infrastructure Management</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
-                            <span>Cloud Security Solutions</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
-                            <span>Backup & Disaster Recovery</span>
-                        </li>
-                    </ul>
-                    <a href="#contact" class="inline-block text-primary font-medium hover:underline">Learn More <i class="ri-arrow-right-line ml-1"></i></a>
-                </div>
-                
-                <!-- Service 4 -->
-              <div class="service-card ... bg-white p-8 rounded-lg shadow-sm border border-gray-100" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="w-16 h-16 flex items-center justify-center bg-blue-50 text-primary rounded-full mb-6">
-                        <i class="ri-database-2-line ri-2x"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-secondary mb-4">E-Commerce Development</h3>
-                    <p class="text-gray-600 mb-6">
-                      We build secure, scalable e-commerce platforms that drive sales and enhance customer engagement. From storefront design to payment integration, we deliver end-to-end online shopping solutions.
-                    </p>
-                    <ul class="text-gray-600 space-y-2 mb-6">
-                        <li class="flex items-start">
-                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
-                            <span>Data Warehousing</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
-                            <span>Business Intelligence</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
-                            <span>Data Visualization</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
-                            <span>Predictive Analytics</span>
-                        </li>
-                    </ul>
-                    <a href="#contact" class="inline-block text-primary font-medium hover:underline">Learn More <i class="ri-arrow-right-line ml-1"></i></a>
-                </div>
-                
-                <!-- Service 5 -->
-              <div class="service-card ... bg-white p-8 rounded-lg shadow-sm border border-gray-100" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="w-16 h-16 flex items-center justify-center bg-blue-50 text-primary rounded-full mb-6">
-                        <i class="ri-shield-check-line ri-2x"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-secondary mb-4">Digital Marketing & SEO Services</h3>
-                    <p class="text-gray-600 mb-6">
-                       We boost your online presence through strategic digital marketing and data-driven SEO techniques. From content and social media to search optimization, we help attract, engage, and convert customers.
-                    </p>
-                    <ul class="text-gray-600 space-y-2 mb-6">
-                        <li class="flex items-start">
-                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
-                            <span>Security Assessment</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
-                            <span>Network Security</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
-                            <span>Data Protection</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
-                            <span>Security Monitoring</span>
-                        </li>
-                    </ul>
-                    <a href="#contact" class="inline-block text-primary font-medium hover:underline">Learn More <i class="ri-arrow-right-line ml-1"></i></a>
-                </div>
-                
-                <!-- Service 6 -->
-                <div class="service-card ... bg-white p-8 rounded-lg shadow-sm border border-gray-100"  data-aos="zoom-in" data-aos-delay="100">
-                    <div class="w-16 h-16 flex items-center justify-center bg-blue-50 text-primary rounded-full mb-6">
-                        <i class="ri-customer-service-2-line ri-2x"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-secondary mb-4">Customised ERP & CRM Solutions</h3>
-                    <p class="text-gray-600 mb-6">
-                        We develop tailored ERP and CRM systems to streamline operations, enhance productivity, and improve customer relationships. Our solutions are scalable, user-friendly, and designed to fit your unique business processes.
-                    </p>
-                    <ul class="text-gray-600 space-y-2 mb-6">
-                        <li class="flex items-start">
-                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
-                            <span>IT Strategy Development</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
-                            <span>Technology Assessment</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
-                            <span>Digital Transformation</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
-                            <span>IT Roadmap Planning</span>
-                        </li>
-                    </ul>
-                    <a href="#contact" class="inline-block text-primary font-medium hover:underline">Learn More <i class="ri-arrow-right-line ml-1"></i></a>
-                </div>
+<!-- Service Card Example 3 -->
+<div class="relative service-card group">
+  <div class="overlay absolute inset-0 z-0">
+    <svg viewBox="0 0 320 350" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="overlayGradient3" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="rgba(30,33,75,0.8)" />
+          <stop offset="50%" stop-color="rgba(12,192,223,0.5)" />
+          <stop offset="100%" stop-color="rgba(30,33,75,0.8)" />
+        </linearGradient>
+      </defs>
+      <path fill="url(#overlayGradient3)" d="M0,0 L320,0 L320,320 C240,350 80,350 0,320 Z"/>
+    </svg>
+  </div>
+  
+  <div class="relative z-10 p-6">
+    <h3 class="text-xl font-semibold text-gray-800 group-hover:text-white transition-colors duration-300 mb-4">Digital Marketing & SEO</h3>
+    <p class="text-gray-600 group-hover:text-white transition-colors duration-300 mb-6">
+      Boost your online presence with targeted digital marketing strategies and SEO optimization.
+    </p>
+    <ul class="space-y-2 mb-6">
+      <li class="flex items-start text-gray-600 group-hover:text-white transition-colors duration-300">
+        <i class="ri-check-line text-blue-600 group-hover:text-white mr-2 mt-1 transition-colors duration-300"></i>
+        SEO Audits & Optimization
+      </li>
+      <li class="flex items-start text-gray-600 group-hover:text-white transition-colors duration-300">
+        <i class="ri-check-line text-blue-600 group-hover:text-white mr-2 mt-1 transition-colors duration-300"></i>
+        Social Media Marketing
+      </li>
+      <li class="flex items-start text-gray-600 group-hover:text-white transition-colors duration-300">
+        <i class="ri-check-line text-blue-600 group-hover:text-white mr-2 mt-1 transition-colors duration-300"></i>
+        PPC & Content Marketing
+      </li>
+    </ul>
+    <a href="#contact" class="inline-block text-blue-600 group-hover:text-white font-medium hover:underline transition-colors duration-300">
+      Learn More <i class="ri-arrow-right-line ml-1"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Service Card Example 4 -->
+<div class="relative service-card group">
+  <div class="overlay absolute inset-0 z-0">
+    <svg viewBox="0 0 320 350" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="overlayGradient4" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="rgba(30,33,75,0.8)" />
+          <stop offset="50%" stop-color="rgba(12,192,223,0.5)" />
+          <stop offset="100%" stop-color="rgba(30,33,75,0.8)" />
+        </linearGradient>
+      </defs>
+      <path fill="url(#overlayGradient4)" d="M0,0 L320,0 L320,320 C240,350 80,350 0,320 Z"/>
+    </svg>
+  </div>
+  
+  <div class="relative z-10 p-6">
+    <h3 class="text-xl font-semibold text-gray-800 group-hover:text-white transition-colors duration-300 mb-4">Cloud Services & DevOps</h3>
+    <p class="text-gray-600 group-hover:text-white transition-colors duration-300 mb-6">
+      Scalable cloud infrastructure and DevOps automation for seamless deployment and management.
+    </p>
+    <ul class="space-y-2 mb-6">
+      <li class="flex items-start text-gray-600 group-hover:text-white transition-colors duration-300">
+        <i class="ri-check-line text-blue-600 group-hover:text-white mr-2 mt-1 transition-colors duration-300"></i>
+        Cloud Migration
+      </li>
+      <li class="flex items-start text-gray-600 group-hover:text-white transition-colors duration-300">
+        <i class="ri-check-line text-blue-600 group-hover:text-white mr-2 mt-1 transition-colors duration-300"></i>
+        CI/CD Pipelines
+      </li>
+      <li class="flex items-start text-gray-600 group-hover:text-white transition-colors duration-300">
+        <i class="ri-check-line text-blue-600 group-hover:text-white mr-2 mt-1 transition-colors duration-300"></i>
+        Monitoring & Maintenance
+      </li>
+    </ul>
+    <a href="#contact" class="inline-block text-blue-600 group-hover:text-white font-medium hover:underline transition-colors duration-300">
+      Learn More <i class="ri-arrow-right-line ml-1"></i>
+    </a>
+  </div>
+</div>
+
+             <!-- Service Card Example 5 -->
+<div class="relative service-card group">
+  <div class="overlay absolute inset-0 z-0">
+    <svg viewBox="0 0 320 350" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="overlayGradient5" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="rgba(30,33,75,0.8)" />
+          <stop offset="50%" stop-color="rgba(12,192,223,0.5)" />
+          <stop offset="100%" stop-color="rgba(30,33,75,0.8)" />
+        </linearGradient>
+      </defs>
+      <path fill="url(#overlayGradient5)" d="M0,0 L320,0 L320,320 C240,350 80,350 0,320 Z"/>
+    </svg>
+  </div>
+  
+  <div class="relative z-10 p-6">
+    <h3 class="text-xl font-semibold text-gray-800 group-hover:text-white transition-colors duration-300 mb-4">Graphic Design & Branding</h3>
+    <p class="text-gray-600 group-hover:text-white transition-colors duration-300 mb-6">
+      Unique and creative graphic designs that strengthen your brand identity and visual communication.
+    </p>
+    <ul class="space-y-2 mb-6">
+      <li class="flex items-start text-gray-600 group-hover:text-white transition-colors duration-300">
+        <i class="ri-check-line text-blue-600 group-hover:text-white mr-2 mt-1 transition-colors duration-300"></i>
+        Logo & Brand Identity
+      </li>
+      <li class="flex items-start text-gray-600 group-hover:text-white transition-colors duration-300">
+        <i class="ri-check-line text-blue-600 group-hover:text-white mr-2 mt-1 transition-colors duration-300"></i>
+        Marketing Collaterals
+      </li>
+      <li class="flex items-start text-gray-600 group-hover:text-white transition-colors duration-300">
+        <i class="ri-check-line text-blue-600 group-hover:text-white mr-2 mt-1 transition-colors duration-300"></i>
+        Print & Digital Design
+      </li>
+    </ul>
+    <a href="#contact" class="inline-block text-blue-600 group-hover:text-white font-medium hover:underline transition-colors duration-300">
+      Learn More <i class="ri-arrow-right-line ml-1"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Service Card Example 6 -->
+<div class="relative service-card group">
+  <div class="overlay absolute inset-0 z-0">
+    <svg viewBox="0 0 320 350" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="overlayGradient6" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="rgba(30,33,75,0.8)" />
+          <stop offset="50%" stop-color="rgba(12,192,223,0.5)" />
+          <stop offset="100%" stop-color="rgba(30,33,75,0.8)" />
+        </linearGradient>
+      </defs>
+      <path fill="url(#overlayGradient6)" d="M0,0 L320,0 L320,320 C240,350 80,350 0,320 Z"/>
+    </svg>
+  </div>
+  
+  <div class="relative z-10 p-6">
+    <h3 class="text-xl font-semibold text-gray-800 group-hover:text-white transition-colors duration-300 mb-4">IT Consulting & Support</h3>
+    <p class="text-gray-600 group-hover:text-white transition-colors duration-300 mb-6">
+      Expert IT consulting and technical support to help you optimize technology and improve business efficiency.
+    </p>
+    <ul class="space-y-2 mb-6">
+      <li class="flex items-start text-gray-600 group-hover:text-white transition-colors duration-300">
+        <i class="ri-check-line text-blue-600 group-hover:text-white mr-2 mt-1 transition-colors duration-300"></i>
+        Technology Strategy Planning
+      </li>
+      <li class="flex items-start text-gray-600 group-hover:text-white transition-colors duration-300">
+        <i class="ri-check-line text-blue-600 group-hover:text-white mr-2 mt-1 transition-colors duration-300"></i>
+        System Integration
+      </li>
+      <li class="flex items-start text-gray-600 group-hover:text-white transition-colors duration-300">
+        <i class="ri-check-line text-blue-600 group-hover:text-white mr-2 mt-1 transition-colors duration-300"></i>
+        Ongoing IT Support
+      </li>
+    </ul>
+    <a href="#contact" class="inline-block text-blue-600 group-hover:text-white font-medium hover:underline transition-colors duration-300">
+      Learn More <i class="ri-arrow-right-line ml-1"></i>
+    </a>
+  </div>
+</div>
+
             </div>
         </div>
-    </div>
-  </div>
+  
 </section>
     </class=>
 
