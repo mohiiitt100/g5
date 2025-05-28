@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intec Vision Solutions - IT Services & Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+    
+
+     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+
+    <!-- AOS CSS -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+<!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<!-- AOS CSS -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+
+ <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN (optional if you're using Tailwind locally) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+
+
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+   
+   <script>
+
+
+    
+      tailwind.config={
+      
+            theme:{
+                extend:{
+                    colors:{
+                        primary:'rgb(12 192 223)',
+                        secondary:'#0B1736',
+                        light: '#F3F4F6',
+                        dark: '#1E293B'
+                    },
+                    borderRadius:{
+                        'none':'0px',
+                        'sm':'4px',
+                        DEFAULT:'8px',
+                        'md':'12px',
+                        'lg':'16px',
+                        'xl':'20px',
+                        '2xl':'24px',
+                        '3xl':'32px',
+                        'full':'9999px',
+                        'button':'8px'
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'inter': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+       
+        
+* {
+    box-sizing: border-box;
+}
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+
+       html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Inter', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+}
+
+        
+        .hero-bg {
+    background: linear-gradient(135deg, #0B1736 0%, rgb(12 192 223) 100%);
+    position: relative;
+    overflow: hidden;
+}
+.hero-section {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.hero-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url("svg pattern");
+    opacity: 0.5;
+}
+        
+        .service-card {
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #2563EB;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .sticky-header {
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .btn-primary {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.1), 0 2px 4px -1px rgba(37, 99, 235, 0.06);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.2), 0 4px 6px -2px rgba(37, 99, 235, 0.1);
+        }
+        
+        .btn-outline {
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(255, 255, 255, 0.1), 0 4px 6px -2px rgba(255, 255, 255, 0.05);
+        }
+        
+        input:focus, textarea:focus {
+            border-color: #2563EB;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        
+        .counter-item {
+            transition: all 0.3s ease;
+        }
+        
+        .counter-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-3px);
+            color: #2563EB;
+        }
+        
+        .custom-checkbox {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #CBD5E1;
+            border-radius: 4px;
+            outline: none;
+            transition: all 0.2s ease;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .custom-checkbox:checked {
+            background-color: #2563EB;
+            border-color: #2563EB;
+        }
+        
+        .custom-checkbox:checked::after {
+            content: '✓';
+            position: absolute;
+            color: white;
+            font-size: 14px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .custom-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        
+        .custom-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #CBD5E1;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        
+        input:checked + .slider {
+            background-color: #2563EB;
+        }
+        
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fadeIn {
+            animation: fadeIn 0.5s ease forwards;
+        }
+        
+        @keyframes typewriter {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        
+        .typewriter {
+            overflow: hidden;
+            white-space: nowrap;
+            animation: typewriter 3s steps(40) 1s forwards;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+        button {
+  position: relative;
+  padding: 10px 20px;
+  border-radius: 7px;
+  border: 1px solid rgb(12 192 223);
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  background: transparent;
+  color: #fff;
+  overflow: hidden;
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+button:hover {
+  background: rgb(12 192 223);
+  /* box-shadow: 0 0 30px 5px rgb(12 192 223); */
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+button:hover::before {
+  -webkit-animation: sh02 0.5s 0s linear;
+  -moz-animation: sh02 0.5s 0s linear;
+  animation: sh02 0.5s 0s linear;
+}
+
+button::before {
+  content: '';
+  display: block;
+  width: 0px;
+  height: 86%;
+  position: absolute;
+  top: 7%;
+  left: 0%;
+  opacity: 0;
+  background: #fff;
+  box-shadow: 0 0 50px 30px #fff;
+  -webkit-transform: skewX(-20deg);
+  -moz-transform: skewX(-20deg);
+  -ms-transform: skewX(-20deg);
+  -o-transform: skewX(-20deg);
+  transform: skewX(-20deg);
+}
+
+@keyframes sh02 {
+  from {
+    opacity: 0;
+    left: 0%;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    left: 100%;
+  }
+}
+
+button:active {
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: box-shadow 0.2s ease-in;
+  -moz-transition: box-shadow 0.2s ease-in;
+  transition: box-shadow 0.2s ease-in;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.up {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+}
+
+.down {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+}
+
+.card1 {
+  width: 50px;
+  height: 50px;
+  outline: none;
+  border: none;
+  background: white;
+  border-radius: 90px 5px 5px 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: .2s ease-in-out;
+  text-align: center;
+}
+
+.instagram {
+  margin-top: 0.8rem;
+  margin-left: 0.8rem;
+
+  fill: #cc39a4;
+}
+
+.card2 {
+  width: 50px;
+  height: 50px;
+  outline: none;
+  border: none;
+  background: white;
+  border-radius: 5px 90px 5px 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: .2s ease-in-out;
+  text-align: center;
+}
+
+.twitter {
+  margin-top: 0.8rem;
+  margin-left: 0.4rem;
+
+  fill: #03A9F4;
+}
+
+.card3 {
+  width: 50px;
+  height: 50px;
+  outline: none;
+  border: none;
+  background: white;
+  border-radius: 5px 5px 5px 90px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: .2s ease-in-out;
+  text-align: center;
+}
+
+.github {
+  margin-top: 0.004rem;
+  margin-left: 0.9rem;
+
+
+}
+
+.card4 {
+  width: 50px;
+  height: 50px;
+  outline: none;
+  border: none;
+  background: white;
+  border-radius: 5px 5px 90px 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: .2s ease-in-out;
+  text-align: center;
+}
+
+.discord {
+  margin-top: -0.2rem;
+  margin-left: 0.4rem;
+
+  fill: #8c9eff;
+}
+
+.card1:hover {
+  cursor: pointer;
+  scale: 1.1;
+  background-color: #cc39a4;
+}
+
+.card1:hover .instagram {
+  fill: white;
+}
+
+.card2:hover {
+  cursor: pointer;
+  scale: 1.1;
+  background-color: #03A9F4;
+}
+
+.card2:hover .twitter {
+  fill: white;
+}
+
+.card3:hover {
+  cursor: pointer;
+  scale: 1.1;
+  background-color: black;
+}
+
+.card3:hover .github {
+  fill: white;
+}
+
+.card4:hover {
+  cursor: pointer;
+  scale: 1.1;
+  background-color: #8c9eff;
+}
+
+.card4:hover .discord {
+  fill: white;
+}
+
+
+  <style>
+
+  #about {
+    position: relative;
+    overflow: hidden;
+  }
+
+  #particle-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  #about .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  #rocket {
+    position: absolute;
+    top: 40%; /* start below the screen */
+    left: -60px;   /* start to the left */
+    font-size: 2.5rem;
+    z-index: 50;
+    opacity: 0;
+    transition: transform 4s ease-in-out, opacity 0.5s ease-in;
+  }
+
+  #rocket.fly {
+    opacity: 1;
+    transform: translate(120vw, -120vh); /* go diagonally off-screen */
+  }
+
+
+ 
+
+  [data-aos="zoom-bounce"] {
+      transform: scale(1);
+      transition: transform 0.5s ease-in-out;
+    }
+
+    [data-aos="zoom-bounce"].aos-animate {
+      transform: scale(1.1);
+    }
+
+    #g{
+      height: 100px;
+      width: 100%;
+      background-color:white;
+    }
+  
+</style>
+
+</head>
+<body class="bg-white text-gray-800">
+    <!-- Header -->
+    <header class="fixed w-full z-50 bg-white transition-all duration-300 sticky-header">
+  <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+    <a href="#">
+      <img src="image/Blue Waves Surfing Club Logo.png" alt="G5 Vision Logo" class="h-10" />
+    </a>
+            
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="nav-link font-medium text-gray-800 hover:text-primary transition-colors">Home</a>
+                <a href="#about" class="nav-link font-medium text-gray-800 hover:text-primary transition-colors">About</a>
+                <a href="#services" class="nav-link font-medium text-gray-800 hover:text-primary transition-colors">Services</a>
+                <a href="#portfolio" class="nav-link font-medium text-gray-800 hover:text-primary transition-colors">Portfolio</a>
+                <a href="#contact" class="nav-link font-medium text-gray-800 hover:text-primary transition-colors">Contact</a>
+            </nav>
+            
+            <div class="flex items-center space-x-4">
+                <a href="#contact" class="hidden md:inline-block bg-rgb(12 192 223) text-black px-6 py-2.5 rounded-button font-medium hover:bg-blue-700 transition-colors whitespace-nowrap !rounded-button">Get in Touch</a>
+                <button class="md:hidden w-10 h-10 flex items-center justify-center text-gray-800" id="mobile-menu-button">
+                    <i class="ri-menu-line ri-lg"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden bg-white shadow-lg absolute w-full">
+            <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
+                <a href="#home" class="font-medium text-gray-800 hover:text-primary transition-colors py-2 border-b border-gray-100">Home</a>
+                <a href="#about" class="font-medium text-gray-800 hover:text-primary transition-colors py-2 border-b border-gray-100">About</a>
+                <a href="#services" class="font-medium text-gray-800 hover:text-primary transition-colors py-2 border-b border-gray-100">Services</a>
+                <a href="#portfolio" class="font-medium text-gray-800 hover:text-primary transition-colors py-2 border-b border-gray-100">Portfolio</a>
+                <a href="#contact" class="font-medium text-gray-800 hover:text-primary transition-colors py-2">Contact</a>
+            </div>
+        </div>
+    </header>
+
+
+
+
+<!-- TailwindCSS CDN (if not already included) -->
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+<style>
+  .service-card {
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      z-index: 1;
+    }
+
+    .service-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 1rem;
+      background: linear-gradient(120deg, rgba(59, 130, 246, 0.1), rgba(147, 197, 253, 0.2));
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: -1;
+    }
+
+    .service-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 20px 30px rgba(59, 130, 246, 0.2);
+    }
+
+    .service-card:hover::before {
+      opacity: 1;
+    }
+</style>
+
+<section id="services" class="pt-20 relative overflow-hidden">
+  <div class="container mx-auto px-4 fade-in">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-black mb-4">Services</h2>
+      <p class="text-black max-w-3xl mx-auto">Marketing, Development, IT Excellence.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Paste all your 6 service-card blocks here exactly as you've written, but replace `class="service-card ...` with this -->
+      <!-- Example: -->
+      <div class="service-card bg-white p-8 rounded-xl border border-gray-200 shadow-md cursor-pointer" data-aos="zoom-in" data-aos-delay="100">
+        <div class="w-16 h-16 flex items-center justify-center bg-blue-50 text-blue-600 rounded-full mb-6">
+          <i class="ri-code-s-slash-line ri-2x"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-800 mb-4">Website / Web App Design & Development</h3>
+        <p class="text-gray-600 mb-6">We design and develop custom websites and web applications tailored to your brand and business goals.</p>
+        <ul class="text-gray-600 space-y-2 mb-6">
+          <li class="flex items-start"><i class="ri-check-line text-blue-600 mr-2 mt-1"></i>Custom Website Development</li>
+          <li class="flex items-start"><i class="ri-check-line text-blue-600 mr-2 mt-1"></i>E-commerce Solutions</li>
+          <li class="flex items-start"><i class="ri-check-line text-blue-600 mr-2 mt-1"></i>Web Application Development</li>
+          <li class="flex items-start"><i class="ri-check-line text-blue-600 mr-2 mt-1"></i>CMS Development</li>
+        </ul>
+        <a href="#contact" class="inline-block text-blue-600 font-medium hover:underline">Learn More <i class="ri-arrow-right-line ml-1"></i></a>
+      </div>
+
+      <!-- Service 2 -->
+               <div class="service-card ... bg-white p-8 rounded-lg shadow-sm border border-gray-100" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="w-16 h-16 flex items-center justify-center bg-blue-50 text-primary rounded-full mb-6">
+
+                        <i class="ri-smartphone-line ri-2x"></i>
+                        
+                    </div>
+                    <h3 class="text-xl font-semibold text-secondary mb-4">UI/UX & Graphics Designing</h3>
+                    <p class="text-gray-600 mb-6">
+                        We craft intuitive user interfaces and engaging user experiences that enhance customer satisfaction. Our graphic design services bring visual appeal and brand identity to life across all platforms.
+                    </p>
+                    <ul class="text-gray-600 space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                            <span>Native iOS Development</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                            <span>Native Android Development</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                            <span>Cross-Platform Development</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                            <span>App Maintenance & Support</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="inline-block text-primary font-medium hover:underline">Learn More <i class="ri-arrow-right-line ml-1"></i></a>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card ... bg-white p-8 rounded-lg shadow-sm border border-gray-100" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="w-16 h-16 flex items-center justify-center bg-blue-50 text-primary rounded-full mb-6">
+                        <i class="ri-cloud-line ri-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-secondary mb-4">Mobile App Development</h3>
+                    <p class="text-gray-600 mb-6">
+                     We develop high-performance mobile apps for iOS and Android that deliver seamless user experiences. From concept to launch, we build scalable, feature-rich apps tailored to your business needs.
+                    </p>
+                    <ul class="text-gray-600 space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                            <span>Cloud Migration</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                            <span>Cloud Infrastructure Management</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                            <span>Cloud Security Solutions</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                            <span>Backup & Disaster Recovery</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="inline-block text-primary font-medium hover:underline">Learn More <i class="ri-arrow-right-line ml-1"></i></a>
+                </div>
+                
+                <!-- Service 4 -->
+              <div class="service-card ... bg-white p-8 rounded-lg shadow-sm border border-gray-100" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="w-16 h-16 flex items-center justify-center bg-blue-50 text-primary rounded-full mb-6">
+                        <i class="ri-database-2-line ri-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-secondary mb-4">E-Commerce Development</h3>
+                    <p class="text-gray-600 mb-6">
+                      We build secure, scalable e-commerce platforms that drive sales and enhance customer engagement. From storefront design to payment integration, we deliver end-to-end online shopping solutions.
+                    </p>
+                    <ul class="text-gray-600 space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                            <span>Data Warehousing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                            <span>Business Intelligence</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                            <span>Data Visualization</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                            <span>Predictive Analytics</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="inline-block text-primary font-medium hover:underline">Learn More <i class="ri-arrow-right-line ml-1"></i></a>
+                </div>
+                
+                <!-- Service 5 -->
+              <div class="service-card ... bg-white p-8 rounded-lg shadow-sm border border-gray-100" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="w-16 h-16 flex items-center justify-center bg-blue-50 text-primary rounded-full mb-6">
+                        <i class="ri-shield-check-line ri-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-secondary mb-4">Digital Marketing & SEO Services</h3>
+                    <p class="text-gray-600 mb-6">
+                       We boost your online presence through strategic digital marketing and data-driven SEO techniques. From content and social media to search optimization, we help attract, engage, and convert customers.
+                    </p>
+                    <ul class="text-gray-600 space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                            <span>Security Assessment</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                            <span>Network Security</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                            <span>Data Protection</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                            <span>Security Monitoring</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="inline-block text-primary font-medium hover:underline">Learn More <i class="ri-arrow-right-line ml-1"></i></a>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="service-card ... bg-white p-8 rounded-lg shadow-sm border border-gray-100"  data-aos="zoom-in" data-aos-delay="100">
+                    <div class="w-16 h-16 flex items-center justify-center bg-blue-50 text-primary rounded-full mb-6">
+                        <i class="ri-customer-service-2-line ri-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-secondary mb-4">Customised ERP & CRM Solutions</h3>
+                    <p class="text-gray-600 mb-6">
+                        We develop tailored ERP and CRM systems to streamline operations, enhance productivity, and improve customer relationships. Our solutions are scalable, user-friendly, and designed to fit your unique business processes.
+                    </p>
+                    <ul class="text-gray-600 space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                            <span>IT Strategy Development</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                            <span>Technology Assessment</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                            <span>Digital Transformation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                            <span>IT Roadmap Planning</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="inline-block text-primary font-medium hover:underline">Learn More <i class="ri-arrow-right-line ml-1"></i></a>
+                </div>
+            </div>
+       
+     </div>
+   
+</section>
+   
+
+    
+  
+
+
+
+
+
+
+
+     <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div>
+                   <img src="image/Blue Waves Surfing Club Logo.png"  alt="G5 Vision Logo" class="h-10 " />
+                    <p class="text-gray-400 mb-6">
+                        At IntecVisionSolutions, we specialize in digital marketing, web development, and a full suite of IT services. Driven by innovation and technology, we deliver solutions that empower your business to grow and succeed.
+                    </p>
+                    <div class="main">
+  <div class="up">
+    <button class="card1">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0,256,256" width="30px" height="30px" fill-rule="nonzero" class="instagram"><g fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(8,8)"><path d="M11.46875,5c-3.55078,0 -6.46875,2.91406 -6.46875,6.46875v9.0625c0,3.55078 2.91406,6.46875 6.46875,6.46875h9.0625c3.55078,0 6.46875,-2.91406 6.46875,-6.46875v-9.0625c0,-3.55078 -2.91406,-6.46875 -6.46875,-6.46875zM11.46875,7h9.0625c2.47266,0 4.46875,1.99609 4.46875,4.46875v9.0625c0,2.47266 -1.99609,4.46875 -4.46875,4.46875h-9.0625c-2.47266,0 -4.46875,-1.99609 -4.46875,-4.46875v-9.0625c0,-2.47266 1.99609,-4.46875 4.46875,-4.46875zM21.90625,9.1875c-0.50391,0 -0.90625,0.40234 -0.90625,0.90625c0,0.50391 0.40234,0.90625 0.90625,0.90625c0.50391,0 0.90625,-0.40234 0.90625,-0.90625c0,-0.50391 -0.40234,-0.90625 -0.90625,-0.90625zM16,10c-3.30078,0 -6,2.69922 -6,6c0,3.30078 2.69922,6 6,6c3.30078,0 6,-2.69922 6,-6c0,-3.30078 -2.69922,-6 -6,-6zM16,12c2.22266,0 4,1.77734 4,4c0,2.22266 -1.77734,4 -4,4c-2.22266,0 -4,-1.77734 -4,-4c0,-2.22266 1.77734,-4 4,-4z"></path></g></g></svg>
+    </button>
+    <button class="card2">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="30px" height="30px" class="twitter"><path d="M42,12.429c-1.323,0.586-2.746,0.977-4.247,1.162c1.526-0.906,2.7-2.351,3.251-4.058c-1.428,0.837-3.01,1.452-4.693,1.776C34.967,9.884,33.05,9,30.926,9c-4.08,0-7.387,3.278-7.387,7.32c0,0.572,0.067,1.129,0.193,1.67c-6.138-0.308-11.582-3.226-15.224-7.654c-0.64,1.082-1,2.349-1,3.686c0,2.541,1.301,4.778,3.285,6.096c-1.211-0.037-2.351-0.374-3.349-0.914c0,0.022,0,0.055,0,0.086c0,3.551,2.547,6.508,5.923,7.181c-0.617,0.169-1.269,0.263-1.941,0.263c-0.477,0-0.942-0.054-1.392-0.135c0.94,2.902,3.667,5.023,6.898,5.086c-2.528,1.96-5.712,3.134-9.174,3.134c-0.598,0-1.183-0.034-1.761-0.104C9.268,36.786,13.152,38,17.321,38c13.585,0,21.017-11.156,21.017-20.834c0-0.317-0.01-0.633-0.025-0.945C39.763,15.197,41.013,13.905,42,12.429"></path></svg>
+    </button>
+  </div>
+  <div class="down">
+    <button class="card3">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="30px" height="30px" class="github">    <path d="M15,3C8.373,3,3,8.373,3,15c0,5.623,3.872,10.328,9.092,11.63C12.036,26.468,12,26.28,12,26.047v-2.051 c-0.487,0-1.303,0-1.508,0c-0.821,0-1.551-0.353-1.905-1.009c-0.393-0.729-0.461-1.844-1.435-2.526 c-0.289-0.227-0.069-0.486,0.264-0.451c0.615,0.174,1.125,0.596,1.605,1.222c0.478,0.627,0.703,0.769,1.596,0.769 c0.433,0,1.081-0.025,1.691-0.121c0.328-0.833,0.895-1.6,1.588-1.962c-3.996-0.411-5.903-2.399-5.903-5.098 c0-1.162,0.495-2.286,1.336-3.233C9.053,10.647,8.706,8.73,9.435,8c1.798,0,2.885,1.166,3.146,1.481C13.477,9.174,14.461,9,15.495,9 c1.036,0,2.024,0.174,2.922,0.483C18.675,9.17,19.763,8,21.565,8c0.732,0.731,0.381,2.656,0.102,3.594 c0.836,0.945,1.328,2.066,1.328,3.226c0,2.697-1.904,4.684-5.894,5.097C18.199,20.49,19,22.1,19,23.313v2.734 c0,0.104-0.023,0.179-0.035,0.268C23.641,24.676,27,20.236,27,15C27,8.373,21.627,3,15,3z"></path></svg>
+    </button>
+    <button class="card4">
+      <svg height="30px" width="30px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" class="discord"><path d="M40,12c0,0-4.585-3.588-10-4l-0.488,0.976C34.408,10.174,36.654,11.891,39,14c-4.045-2.065-8.039-4-15-4s-10.955,1.935-15,4c2.346-2.109,5.018-4.015,9.488-5.024L18,8c-5.681,0.537-10,4-10,4s-5.121,7.425-6,22c5.162,5.953,13,6,13,6l1.639-2.185C13.857,36.848,10.715,35.121,8,32c3.238,2.45,8.125,5,16,5s12.762-2.55,16-5c-2.715,3.121-5.857,4.848-8.639,5.815L33,40c0,0,7.838-0.047,13-6C45.121,19.425,40,12,40,12z M17.5,30c-1.933,0-3.5-1.791-3.5-4c0-2.209,1.567-4,3.5-4s3.5,1.791,3.5,4C21,28.209,19.433,30,17.5,30z M30.5,30c-1.933,0-3.5-1.791-3.5-4c0-2.209,1.567-4,3.5-4s3.5,1.791,3.5,4C34,28.209,32.433,30,30.5,30z"></path></svg>
+    </button>
+  </div>
+</div>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-semibold mb-6">Company</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#About Us" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#contect Us" class="text-gray-400 hover:text-white transition-colors">contect Us</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+                        
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-semibold mb-6">Our Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Web Development</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Mobile App Development</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Cloud Solutions</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Data Analytics</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Cybersecurity</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">IT Consulting</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-semibold mb-6">Contact Us</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="ri-map-pin-line mr-3 mt-1"></i>
+                            <span class="text-gray-400">Visit Our Location
+17, South Kamathipura, Indore, Madhya Pradesh 452006, India</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-phone-line mr-3 mt-1"></i>
+                            <span class="text-gray-400">Looking For Project
++91-234-567-8900</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-mail-line mr-3 mt-1"></i>
+                            <span class="text-gray-400">Send Us Email
+info@intecvisionsolutions</span>
+                        </li>
+                        <!-- <li class="flex items-start">
+                            <i class="ri-time-line mr-3 mt-1"></i>
+                            <span class="text-gray-400">Monday - Friday: 9:00 AM - 6:00 PM</span>
+                        </li> -->
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-gray-800 text-center">
+                <p class="text-gray-400">&copy; 2025 Intec Vision Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300">
+        <i class="ri-arrow-up-line ri-lg"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script id="mobile-menu-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+                if (mobileMenuButton.querySelector('i').classList.contains('ri-menu-line')) {
+                    mobileMenuButton.querySelector('i').classList.remove('ri-menu-line');
+                    mobileMenuButton.querySelector('i').classList.add('ri-close-line');
+                } else {
+                    mobileMenuButton.querySelector('i').classList.remove('ri-close-line');
+                    mobileMenuButton.querySelector('i').classList.add('ri-menu-line');
+                }
+            });
+            
+            // Close mobile menu when clicking on a link
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuButton.querySelector('i').classList.remove('ri-close-line');
+                    mobileMenuButton.querySelector('i').classList.add('ri-menu-line');
+                });
+            });
+        });
+    </script>
+
+    <script id="sticky-header-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            const header = document.querySelector('header');
+            
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 100) {
+                    header.classList.add('shadow-md');
+                } else {
+                    header.classList.remove('shadow-md');
+                }
+            });
+        });
+    </script>
+
+    <script id="portfolio-filter-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.portfolio-filter');
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('active', 'bg-primary', 'text-white');
+                        btn.classList.add('text-gray-700');
+                    });
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active', 'bg-primary', 'text-white');
+                    this.classList.remove('text-gray-700');
+                    
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Show/hide portfolio items based on filter
+                    portfolioItems.forEach(item => {
+                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+
+    <script id="back-to-top-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            const backToTopButton = document.getElementById('back-to-top');
+            
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 300) {
+                    backToTopButton.classList.remove('opacity-0', 'invisible');
+                    backToTopButton.classList.add('opacity-100', 'visible');
+                } else {
+                    backToTopButton.classList.remove('opacity-100', 'visible');
+                    backToTopButton.classList.add('opacity-0', 'invisible');
+                }
+            });
+            
+            backToTopButton.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+    <script id="contact-form-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contact-form');
+            
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form values
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const phone = document.getElementById('phone').value;
+                const service = document.getElementById('service').value;
+                const message = document.getElementById('message').value;
+                const consent = document.getElementById('consent').checked;
+                
+                // Validate form
+                if (!name || !email || !message || !consent) {
+                    alert('Please fill in all required fields and agree to the privacy policy.');
+                    return;
+                }
+                
+                // Simulate form submission
+                alert('Thank you for your message! We will get back to you soon.');
+                contactForm.reset();
+            });
+        });
+    </script>
+
+    <script id="smooth-scroll-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('a[href^="#"]');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        const offsetTop = targetElement.getBoundingClientRect().top + window.pageYOffset - 80;
+                        
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script>
+  AOS.init({
+    duration: 1000,  // animation kitni der chale
+    once: true       // ek baar hi chale scroll par
+  });
+
+
+</script>
+
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Container jisko animate karna hai
+  gsap.from("#about .container > div", {
+    scrollTrigger: {
+      trigger: "#about",
+      start: "top 80%",  // jab about section top viewport ke 80% par aaye
+      toggleActions: "play none none none", // ek baar play kare
+    },
+    opacity: 0,
+    y: 50,
+    duration: 1,
+    stagger: 0.3,  // elements thoda thoda delay ke sath animate honge
+    ease: "power3.out"
+  });
+
+
+
+
+  gsap.from("#about h2, #about h3, #about p, #about button", {
+  scrollTrigger: {
+    trigger: "#about",
+    start: "top 80%",
+    toggleActions: "play none none none",
+  },
+  opacity: 0,
+  y: 30,
+  duration: 0.8,
+  stagger: 0.2,
+  ease: "power2.out",
+});
+</script>
+
+<!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    once: true, // animation happens only once
+    duration: 800, // animation duration in ms
+    easing: 'ease-in-out',
+  });
+</script>
+
+
+
+
+
+
+
+</body>
+</html>
