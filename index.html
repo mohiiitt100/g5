@@ -812,11 +812,6 @@ button:active {
 </section>
 
  
-
-
-
-
-
  
     <!-- Services Section -->
     <section id="services" 
@@ -1387,112 +1382,118 @@ button:active {
 
 <!-- marketing section -->
 
+<!-- marketing section -->
 <section class="px-4 py-12 max-w-6xl mx-auto bg-white">
-    <!-- Tabs -->
-   <div class="flex justify-between bg-white shadow rounded-lg overflow-hidden mb-10 space-x-4">
-  <button onclick="showTab('marketing', this)" class="tab-btn flex-1 py-4 text-center font-medium text-gray-600 hover:text-white">Marketing</button>
-  <button onclick="showTab('planning', this)" class="tab-btn flex-1 py-4 text-center font-medium text-gray-600 hover:text-white">Planning</button>
-  <button onclick="showTab('analysis', this)" class="tab-btn flex-1 py-4 text-center font-medium text-gray-600 hover:text-white">Analysis</button>
-  <button onclick="showTab('strategy', this)" class="tab-btn flex-1 py-4 text-center font-medium text-gray-600 hover:text-white">Strategy</button>
-</div>
+  <!-- Tabs -->
+  <div class="flex flex-col md:flex-row justify-between bg-white shadow rounded-lg overflow-hidden mb-10">
+    <button onclick="showTab('marketing')" class="tab-btn w-full md:flex-1 py-4 text-center font-medium text-gray-600 hover:text-white">Marketing</button>
+    <button onclick="showTab('planning')" class="tab-btn w-full md:flex-1 py-4 text-center font-medium text-gray-600 hover:text-white">Planning</button>
+    <button onclick="showTab('analysis')" class="tab-btn w-full md:flex-1 py-4 text-center font-medium text-gray-600 hover:text-white">Analysis</button>
+    <button onclick="showTab('strategy')" class="tab-btn w-full md:flex-1 py-4 text-center font-medium text-gray-600 hover:text-white">Strategy</button>
+  </div>
 
-    <!-- Tab Contents -->
-    <div id="marketing" class="tab-content grid grid-cols-1 md:grid-cols-2 gap-10 items-center  " data-aos="fade-up">
-      <img src="image.png" alt="Marketing" class="w-full">
-      <div>
-       <p class="text-lg text-gray-700 mb-4">
-  <span class="text-3xl font-bold" style="color: rgb(12, 192, 223);">S</span>EO strategies help you rank higher on search engine results.
+  <!-- Tab Contents -->
+  <div id="marketing" class="tab-content grid grid-cols-1 md:grid-cols-2 gap-10 items-center" data-aos="fade-up">
+    <img src="image.png" alt="Marketing" class="w-full">
+    <div>
+      <p class="text-lg text-gray-700 mb-4">
+  <span class="text-3xl font-bold text-[rgb(12,192,223)]">S</span>EO strategies help you rank higher on search engine results.
 </p>
-
-        <ul class="text-gray-700 space-y-3 mb-6">
-  <li><span class="mr-2" style="color: rgb(12, 192, 223);">✔</span>User-Friendly Interface</li>
-  <li><span class="mr-2" style="color: rgb(12, 192, 223);">✔</span>Advanced analytics</li>
-  <li><span class="mr-2" style="color: rgb(12, 192, 223);">✔</span>Custom branding options</li>
-  <li><span class="mr-2" style="color: rgb(12, 192, 223);">✔</span>Start your journey to success</li>
+      <ul class="text-gray-700 space-y-3 mb-6">
+  <li class="flex items-center"><span class="mr-2 text-[rgb(12,192,223)]">✔</span>User-Friendly Interface</li>
+  <li class="flex items-center"><span class="mr-2 text-[rgb(12,192,223)]">✔</span>Advanced analytics</li>
+  <li class="flex items-center"><span class="mr-2 text-[rgb(12,192,223)]">✔</span>Custom branding options</li>
+  <li class="flex items-center"><span class="mr-2 text-[rgb(12,192,223)]">✔</span>Start your journey to success</li>
 </ul>
 
-<a href="#contact"
-   class="inline-flex items-center text-white px-6 py-2 rounded-full"
-   style="background-color: rgb(12, 192, 223);">
-   Explore More →
-</a>
-      </div>
+      <a href="#contact" class="inline-flex items-center text-white px-6 py-2 rounded-full" style="background-color: rgb(12, 192, 223);">
+        Explore More →
+      </a>
     </div>
+  </div>
 
-    <div id="planning" class="tab-content hidden grid grid-cols-1 md:grid-cols-2 gap-10 items-center" data-aos="fade-up">
-      <img src="https://cdni.iconscout.com/illustration/premium/thumb/project-planning-4472973-3706243.png" alt="Planning" class="w-full">
-      <div>
-        <p class="text-lg text-gray-700 mb-4"><span style="color: rgb(12, 192, 223); text-3xl font-bold">P</span>lanning tools and roadmaps that keep you on track.</p>
-        <ul class="text-gray-700 space-y-3 mb-6">
-  <li><span style="color: rgb(12, 192, 223);" class="mr-2">✔</span>Strategy Blueprints</li>
-  <li><span style="color: rgb(12, 192, 223);" class="mr-2">✔</span>Timeline Management</li>
-  <li><span style="color: rgb(12, 192, 223);" class="mr-2">✔</span>Budget Forecasting</li>
+  <!-- Planning Tab -->
+  <div id="planning" class="tab-content hidden grid grid-cols-1 md:grid-cols-2 gap-10 items-center" data-aos="fade-up">
+    <img src="image/planning.png" alt="Planning" class="w-full">
+    <div>
+      <p class="text-lg text-gray-700 mb-4">
+  <span class="text-3xl font-bold text-[rgb(12,192,223)]">P</span>lanning tools and roadmaps that keep you on track.
+</p>
+     <ul class="text-gray-700 space-y-3 mb-6">
+  <li class="flex items-center"><span class="mr-2 text-[rgb(12,192,223)]">✔</span>Strategy Blueprints</li>
+  <li class="flex items-center"><span class="mr-2 text-[rgb(12,192,223)]">✔</span>Timeline Management</li>
+  <li class="flex items-center"><span class="mr-2 text-[rgb(12,192,223)]">✔</span>Budget Forecasting</li>
 </ul>
 
-        <a href="#contact"
-   class="inline-flex items-center text-white px-6 py-2 rounded-full"
-   style="background-color: rgb(12, 192, 223);">
-   Explore More →
-</a>
-      </div>
+      <a href="#contact" class="inline-flex items-center text-white px-6 py-2 rounded-full" style="background-color: rgb(12, 192, 223);">
+        Explore More →
+      </a>
     </div>
+  </div>
 
-    <div id="analysis" class="tab-content hidden grid grid-cols-1 md:grid-cols-2 gap-10 items-center" data-aos="fade-up">
-      <img src="https://cdni.iconscout.com/illustration/premium/thumb/business-data-analysis-5691245-4746793.png" alt="Analysis" class="w-full">
-      <div>
-        <p class="text-lg text-gray-700 mb-4"><span style="color: rgb(12,192,223);" text-3xl font-bold">A</span>nalysis helps identify trends and measure performance.</p>
-        <ul class="text-gray-700 space-y-3 mb-6">
-          <li><span style="color: rgb(12, 192, 223);">✔</span>Performance Reports</li>
-          <li><span style="color: rgb(12, 192, 223);">✔</span>Traffic Insights</li>
-          <li><span style="color: rgb(12, 192, 223);">✔</span>Real-time Monitoring</li>
-        </ul>
-       <a href="#contact"
-   class="inline-flex items-center text-white px-6 py-2 rounded-full"
-   style="background-color: rgb(12, 192, 223);">
-   Explore More →
-</a>
-      </div>
-    </div>
+  <!-- Analysis Tab -->
+  <div id="analysis" class="tab-content hidden grid grid-cols-1 md:grid-cols-2 gap-10 items-center" data-aos="fade-up">
+    <img src="image/anlaysis.png" alt="Analysis" class="w-full">
+    <div>
+     <p class="text-lg text-gray-700 mb-4">
+  <span class="text-3xl font-bold text-[rgb(12,192,223)]">A</span>nalysis helps identify trends and measure performance.
+</p>
+     <ul class="text-gray-700 space-y-3 mb-6">
+  <li class="flex items-center"><span class="mr-2 text-[rgb(12,192,223)]">✔</span>Performance Reports</li>
+  <li class="flex items-center"><span class="mr-2 text-[rgb(12,192,223)]">✔</span>Traffic Insights</li>
+  <li class="flex items-center"><span class="mr-2 text-[rgb(12,192,223)]">✔</span>Real-time Monitoring</li>
+</ul>
 
-    <div id="strategy" class="tab-content hidden grid grid-cols-1 md:grid-cols-2 gap-10 items-center" data-aos="fade-up">
-      <img src="https://cdni.iconscout.com/illustration/premium/thumb/marketing-strategy-5350947-4476202.png" alt="Strategy" class="w-full">
-      <div>
-        <p class="text-lg text-gray-700 mb-4"><span style="color: rgb(12, 192, 223); text-3xl font-bold">S</span>trategic execution for long-term growth and sustainability.</p>
-        <ul class="text-gray-700 space-y-3 mb-6">
-          <li><span style="color: rgb(12, 192, 223);">✔</span>Targeted Goals</li>
-          <li><span style="color: rgb(12, 192, 223);">✔</span>Market Positioning</li>
-          <li><span style="color: rgb(12, 192, 223);">✔</span>Scalability Plans</li>
-        </ul>
-        <a href="#contact"
-   class="inline-flex items-center text-white px-6 py-2 rounded-full"
-   style="background-color: rgb(12, 192, 223);">
-   Explore More →
-</a>
-      </div>
+      <a href="#contact" class="inline-flex items-center text-white px-6 py-2 rounded-full" style="background-color: rgb(12, 192, 223);">
+        Explore More →
+      </a>
     </div>
-  </section>
+  </div>
+
+  <!-- Strategy Tab -->
+  <div id="strategy" class="tab-content hidden grid grid-cols-1 md:grid-cols-2 gap-10 items-center" data-aos="fade-up">
+    <img src="image/stratagy.png" alt="Strategy" class="w-full">
+    <div>
+      <p class="text-lg text-gray-700 mb-4"><span class="text-3xl font-bold" style="color: rgb(12, 192, 223);">S</span>trategic execution for long-term growth and sustainability.</p>
+     <ul class="text-gray-700 space-y-3 mb-6">
+  <li class="flex items-center"><span class="mr-2 text-[rgb(12,192,223)]">✔</span>Targeted Goals</li>
+  <li class="flex items-center"><span class="mr-2 text-[rgb(12,192,223)]">✔</span>Market Positioning</li>
+  <li class="flex items-center"><span class="mr-2 text-[rgb(12,192,223)]">✔</span>Scalability Plans</li>
+</ul>
+
+      <a href="#contact" class="inline-flex items-center text-white px-6 py-2 rounded-full" style="background-color: rgb(12, 192, 223);">
+        Explore More →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- JS for Tabs -->
+<script>
+  function showTab(tabId) {
+    document.querySelectorAll('.tab-content').forEach(content => content.classList.add('hidden'));
+    document.getElementById(tabId).classList.remove('hidden');
+
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.classList.remove('text-[rgb(12,192,223)]', 'font-bold');
+      btn.classList.add('text-gray-600');
+    });
+
+    const activeBtn = Array.from(document.querySelectorAll('.tab-btn')).find(btn =>
+      btn.textContent.toLowerCase().includes(tabId)
+    );
+    if (activeBtn) {
+      activeBtn.classList.add('text-[rgb(12,192,223)]', 'font-bold');
+    }
+  }
+
+  AOS.init();
+</script>
+
 
   
 
-  <!-- JS for Tabs -->
-  <script>
-    function showTab(tabId) {
-      document.querySelectorAll('.tab-content').forEach(content => {
-        content.classList.add('hidden');
-      });
-      document.querySelectorAll('.tab-btn').forEach(btn => {
-        btn.classList.remove('text-green-500', 'border-green-500');
-        btn.classList.add('text-gray-600');
-      });
-
-      document.getElementById(tabId).classList.remove('hidden');
-      const activeBtn = Array.from(document.querySelectorAll('.tab-btn')).find(btn => btn.textContent.toLowerCase().includes(tabId));
-      activeBtn.classList.add('text-green-500', 'border-green-500');
-    }
-
-    AOS.init(); // Init AOS animation
-  </script>
-
+  
 
 
 
