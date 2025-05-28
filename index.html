@@ -1045,7 +1045,7 @@ button:active {
 
 
 
-  <!-- portfolio -->
+ <!-- portfolio -->
 <section id="portfolio" class="py-20 bg-gray-50">
   <div class="container mx-auto px-4">
     <div class="text-center mb-16">
@@ -1056,12 +1056,13 @@ button:active {
     </div>
 
     <!-- Filter Buttons -->
-    <div class="flex flex-wrap justify-center items-center bg-white p-2 rounded-full shadow-sm gap-2 mb-10">
-      <button class="portfolio-filter active px-6 py-2 rounded-full text-white bg-primary font-medium" data-filter="all">All Projects</button>
-      <button class="portfolio-filter px-6 py-2 rounded-full text-gray-700 font-medium transition-colors" data-filter="web">Web Development</button>
-      <button class="portfolio-filter px-6 py-2 rounded-full text-gray-700 font-medium transition-colors" data-filter="mobile">Mobile Apps</button>
-      <button class="portfolio-filter px-6 py-2 rounded-full text-gray-700 font-medium transition-colors" data-filter="cloud">Cloud Solutions</button>
-    </div>
+<div class="flex flex-wrap justify-center items-center bg-white p-2 rounded-full shadow-sm gap-2 mb-10">
+  <button class="portfolio-filter active px-6 py-2 rounded-full font-medium transition-all text-white bg-primary" data-filter="all">All Projects</button>
+  <button class="portfolio-filter px-6 py-2 rounded-full font-medium transition-all text-gray-700 bg-white" data-filter="web">Web Development</button>
+  <button class="portfolio-filter px-6 py-2 rounded-full font-medium transition-all text-gray-700 bg-white" data-filter="mobile">Mobile Apps</button>
+  <button class="portfolio-filter px-6 py-2 rounded-full font-medium transition-all text-gray-700 bg-white" data-filter="cloud">Cloud Solutions</button>
+</div>
+
 
     <!-- Portfolio Items Wrapper -->
     <div id="portfolio-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-4">
@@ -1110,10 +1111,12 @@ button:active {
       </div>
     </div>
 
-    <!-- Show More Button -->
-    <div class="text-center mt-8">
-      <button id="showMoreBtn" class="px-6 py-2 bg-primary text-white rounded-full font-medium">Show More</button>
-    </div>
+   <!-- Show More / Show Less Buttons -->
+<div class="text-center mt-8">
+  <button id="showMoreBtn" class="px-6 py-2 bg-primary text-white rounded-full font-medium">Show More</button>
+  <button id="showLessBtn" class="px-6 py-2 bg-gray-300 text-gray-800 rounded-full font-medium hidden">Show Less</button>
+</div>
+
 
     <!-- CTA Button -->
     <div class="text-center mt-12">
@@ -1126,61 +1129,81 @@ button:active {
     </div>
 
     <!-- Filter Script -->
-    <script>
-      const filterButtons = document.querySelectorAll('.portfolio-filter');
-      const items = document.querySelectorAll('.portfolio-item');
-      const showMoreBtn = document.getElementById('showMoreBtn');
+   <script>
+  const filterButtons = document.querySelectorAll('.portfolio-filter');
+  const items = document.querySelectorAll('.portfolio-item');
+  const showMoreBtn = document.getElementById('showMoreBtn');
+  const showLessBtn = document.getElementById('showLessBtn');
 
-      function showFilteredItems(category) {
-        let shown = 0;
-        items.forEach(item => {
-          const itemCategory = item.getAttribute('data-category');
-          if (category === 'all' || itemCategory === category) {
-            item.style.display = 'none';
-            item.classList.add('hidden');
-          }
-        });
-
-        items.forEach(item => {
-          const itemCategory = item.getAttribute('data-category');
-          if ((category === 'all' || itemCategory === category) && shown < 2) {
-            item.style.display = 'block';
-            item.classList.remove('hidden');
-            shown++;
-          }
-        });
-
-        showMoreBtn.style.display = 'inline-block';
-        showMoreBtn.setAttribute('data-current-filter', category);
+  function showFilteredItems(category) {
+    let shown = 0;
+    items.forEach(item => {
+      const itemCategory = item.getAttribute('data-category');
+      if (category === 'all' || itemCategory === category) {
+        item.style.display = 'none';
+        item.classList.add('hidden');
       }
+    });
 
-      filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-          const filter = button.getAttribute('data-filter');
-          filterButtons.forEach(btn => btn.classList.remove('bg-primary', 'text-white'));
-          button.classList.add('bg-primary', 'text-white');
-          showFilteredItems(filter);
-        });
-      });
+    items.forEach(item => {
+      const itemCategory = item.getAttribute('data-category');
+      if ((category === 'all' || itemCategory === category) && shown < 2) {
+        item.style.display = 'block';
+        item.classList.remove('hidden');
+        shown++;
+      }
+    });
 
-      showMoreBtn.addEventListener('click', () => {
-        const currentFilter = showMoreBtn.getAttribute('data-current-filter');
-        items.forEach(item => {
-          const itemCategory = item.getAttribute('data-category');
-          if (currentFilter === 'all' || itemCategory === currentFilter) {
-            item.style.display = 'block';
-            item.classList.remove('hidden');
-          }
-        });
-        showMoreBtn.style.display = 'none';
-      });
+    const totalItems = Array.from(items).filter(item => {
+      const itemCategory = item.getAttribute('data-category');
+      return (category === 'all' || itemCategory === category);
+    });
 
-      // Initial Load
-      showFilteredItems('all');
-    </script>
+    showMoreBtn.style.display = totalItems.length > 2 ? 'inline-block' : 'none';
+    showLessBtn.style.display = 'none';
+    showMoreBtn.setAttribute('data-current-filter', category);
+  }
+
+ filterButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const filter = button.getAttribute('data-filter');
+    filterButtons.forEach(btn => btn.classList.remove('bg-primary', 'text-white'));
+    filterButtons.forEach(btn => btn.classList.add('text-gray-700', 'bg-white'));
+    button.classList.remove('text-gray-700', 'bg-white');
+    button.classList.add('bg-primary', 'text-white');
+    showFilteredItems(filter);
+  });
+});
+
+   
+
+  showMoreBtn.addEventListener('click', () => {
+    const currentFilter = showMoreBtn.getAttribute('data-current-filter');
+    let count = 0;
+    items.forEach(item => {
+      const itemCategory = item.getAttribute('data-category');
+      if (currentFilter === 'all' || itemCategory === currentFilter) {
+        item.style.display = 'block';
+        item.classList.remove('hidden');
+        count++;
+      }
+    });
+    showMoreBtn.style.display = 'none';
+    showLessBtn.style.display = count > 2 ? 'inline-block' : 'none';
+  });
+
+  showLessBtn.addEventListener('click', () => {
+    const currentFilter = showMoreBtn.getAttribute('data-current-filter');
+    showFilteredItems(currentFilter);
+  });
+
+  // Initial Load
+  showFilteredItems('all');
+</script>
+
+
   </div>
 </section>
-
 
 
 
